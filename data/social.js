@@ -1,55 +1,43 @@
-const socialData = [
-
-    // ===== BÁO ĐIỆN TỬ =====
+const social = [
 
     {
-        type: "website",
+        platform: "website",
 
-        title: "Website Báo Quân khu 1 Điện tử",
+        title: "Báo điện tử",
 
-        url: "https://baoquankhu1.vn",
+        url: "https://baoquankhu1.vn/",
 
-        thumbnail:
-            "https://placehold.co/1200x675"
+        thumbnail: "assets/products/website.png"
     },
 
-    // ===== FACEBOOK =====
-
     {
-        type: "facebook",
+        platform: "facebook",
 
-        title: "Facebook: Báo Quân khu 1 Điện tử",
+        title: "Facebook",
 
         url: "https://www.facebook.com/baoquankhu1",
 
-        thumbnail:
-            "https://placehold.co/1200x675"
+        thumbnail: ""
     },
 
-    // ===== YOUTUBE =====
-
     {
-        type: "youtube",
+        platform: "youtube",
 
-        title: "Kênh YouTube: Báo-Truyền hình Quân khu 1",
+        title: "YouTube",
 
         url: "https://www.youtube.com/@bao-truyenhinhquankhu1",
 
-        thumbnail:
-            "https://placehold.co/1200x675"
+        thumbnail: ""
     },
 
-    // ===== TIKTOK =====
-
     {
-        type: "tiktok",
+        platform: "tiktok",
 
-        title: "TikTok: Báo Quân khu 1",
+        title: "TikTok",
 
         url: "https://www.tiktok.com/@baoquankhu1",
 
-        thumbnail:
-            "https://placehold.co/1200x675"
+        thumbnail: ""
     }
 
 ];

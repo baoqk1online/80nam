@@ -27,7 +27,7 @@ const products = [
 
         url: "https://baoquankhu1.vn/",
 
-        thumbnail: "assets/products/website.jpg"
+        thumbnail: "assets/products/website.png"
     }
 
 ];

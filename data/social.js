@@ -7,7 +7,7 @@ const socialData = [
 
         title: "Website Báo Quân khu 1 Điện tử",
 
-        url: "https://baoqquankhu1.vn",
+        url: "https://baoquankhu1.vn",
 
         thumbnail:
             "https://placehold.co/1200x675"

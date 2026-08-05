@@ -5,9 +5,9 @@ const socialData = [
     {
         type: "website",
 
-        title: "Chuyên trang điện tử",
+        title: "Website Báo Quân khu 1 Điện tử",
 
-        url: "https://baoqk1.vn",
+        url: "https://baoqquankhu1.vn",
 
         thumbnail:
             "https://placehold.co/1200x675"
@@ -18,9 +18,9 @@ const socialData = [
     {
         type: "facebook",
 
-        title: "Facebook Báo Quân khu 1",
+        title: "Facebook: Báo Quân khu 1 Điện tử",
 
-        url: "https://facebook.com",
+        url: "https://www.facebook.com/baoquankhu1",
 
         thumbnail:
             "https://placehold.co/1200x675"
@@ -31,9 +31,9 @@ const socialData = [
     {
         type: "youtube",
 
-        title: "Kênh YouTube",
+        title: "Kênh YouTube: Báo-Truyền hình Quân khu 1",
 
-        url: "https://youtube.com",
+        url: "https://www.youtube.com/@bao-truyenhinhquankhu1",
 
         thumbnail:
             "https://placehold.co/1200x675"
@@ -44,9 +44,9 @@ const socialData = [
     {
         type: "tiktok",
 
-        title: "TikTok",
+        title: "TikTok: Báo Quân khu 1",
 
-        url: "https://tiktok.com",
+        url: "https://www.tiktok.com/@baoquankhu1",
 
         thumbnail:
             "https://placehold.co/1200x675"

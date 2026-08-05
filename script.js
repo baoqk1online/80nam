@@ -452,3 +452,59 @@ console.log(
     "80 năm Báo Quân khu 1"
 
 );
+
+/* ==========================
+
+   TẠO KHỐI MẠNG XÃ HỘI
+
+========================== */
+
+const socialRow = document.getElementById(
+
+    "social-row"
+
+);
+
+function renderSocial() {
+
+    socialRow.innerHTML = "";
+
+    socialData.forEach(item => {
+
+        const card = document.createElement(
+
+            "a"
+
+        );
+
+        card.href = item.url;
+
+        card.target = "_blank";
+
+        card.className =
+
+            "social-card";
+
+        card.innerHTML = `
+
+            <img src="${item.thumbnail}">
+
+            <div class="social-overlay">
+
+                <span>
+
+                    ${item.title}
+
+                </span>
+
+            </div>
+
+        `;
+
+        socialRow.appendChild(card);
+
+    });
+
+}
+
+renderSocial();

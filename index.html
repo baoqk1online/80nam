@@ -6,8 +6,9 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SỬA: Tiêu đề trang -->
 
     <title>80 năm Báo Quân khu 1</title>
 
@@ -17,23 +18,27 @@
 
 <body>
 
+    <!-- ========================================= -->
     <!-- THANH TIẾN TRÌNH -->
+    <!-- ========================================= -->
 
     <div id="progress-bar"></div>
 
+    <!-- ========================================= -->
     <!-- MENU -->
+    <!-- ========================================= -->
 
     <header class="header">
 
+        <!-- SỬA: Logo -->
+
         <div class="logo">
 
-            BÁO QUÂN KHU 1 · 80 NĂM
+            80 NĂM BÁO QUÂN KHU 1
 
         </div>
 
         <nav>
-
-            <a href="#hero">Trang chủ</a>
 
             <a href="#products">Sản phẩm</a>
 
@@ -45,13 +50,19 @@
 
     </header>
 
+    <!-- ========================================= -->
     <!-- HERO -->
+    <!-- ========================================= -->
 
-    <section id="hero" class="hero screen">
+    <section class="hero" id="hero">
+
+        <!-- SỬA: Ảnh nền -->
 
         <div class="hero-bg"></div>
 
         <div class="hero-content">
+
+            <!-- SỬA: Con số -->
 
             <div class="hero-number">
 
@@ -59,17 +70,23 @@
 
             </div>
 
+            <!-- SỬA: Tiêu đề -->
+
             <h1>
 
                 BÁO QUÂN KHU 1
 
             </h1>
 
+            <!-- SỬA: Mốc thời gian -->
+
             <h2>
 
-                1946 — 2026
+                1946 – 2026
 
             </h2>
+
+            <!-- SỬA: Giới thiệu -->
 
             <p>
 
@@ -82,11 +99,13 @@
 
     </section>
 
+    <!-- ========================================= -->
     <!-- KHỐI SẢN PHẨM -->
+    <!-- ========================================= -->
 
-    <section id="products" class="screen products">
+    <section id="products" class="products screen">
 
-        <h2>
+        <h2 class="section-title">
 
             SẢN PHẨM KỶ NIỆM
 
@@ -94,24 +113,36 @@
 
         <div class="products-layout">
 
+            <!-- ========================================= -->
             <!-- BÁO IN -->
+            <!-- ========================================= -->
+
+            <!-- SỬA LINK -->
 
             <a href="#"
                class="product newspaper">
 
+                <!-- SỬA ẢNH -->
+
                 <img src="assets/products/newspaper.jpg">
+
+                <!-- SỬA TIÊU ĐỀ -->
 
                 <div class="caption">
 
-                    Báo in đặc biệt
+                    Số báo đặc biệt kỷ niệm 80 năm ra số báo đầu tiên 19-8-1946 / 19-8-2026
 
                 </div>
 
             </a>
 
+            <!-- ========================================= -->
             <!-- CỘT PHẢI -->
+            <!-- ========================================= -->
 
             <div class="right-column">
+
+                <!-- PHIM -->
 
                 <a href="#"
                    class="product documentary">
@@ -120,11 +151,13 @@
 
                     <div class="caption">
 
-                        Phim tài liệu
+                        Phim truyền thống 80 năm Báo Quân khu 1
 
                     </div>
 
                 </a>
+
+                <!-- TRANG WEB -->
 
                 <a href="#"
                    class="product website">
@@ -133,7 +166,7 @@
 
                     <div class="caption">
 
-                        Chuyên trang điện tử
+                        Báo Quân khu 1 Điện tử
 
                     </div>
 
@@ -143,51 +176,61 @@
 
         </div>
 
-        <div class="social-row">
+        <!-- ========================================= -->
+        <!-- MẠNG XÃ HỘI -->
+        <!-- Tự động sinh từ data/social.js -->
+        <!-- ========================================= -->
 
-            <a href="#" class="social-card">
-
-                <img src="assets/products/facebook.jpg">
-
-                <span>Facebook</span>
-
-            </a>
-
-            <a href="#" class="social-card">
-
-                <img src="assets/products/youtube.jpg">
-
-                <span>YouTube</span>
-
-            </a>
-
-            <a href="#" class="social-card">
-
-                <img src="assets/products/tiktok.jpg">
-
-                <span>TikTok</span>
-
-            </a>
+        <div id="social-row" class="social-row">
 
         </div>
 
     </section>
 
+    <!-- ========================================= -->
     <!-- TIMELINE -->
+    <!-- ========================================= -->
 
     <section id="timeline">
 
         <div class="timeline-line"></div>
 
+        <!-- ========================================= -->
+        <!-- MỐC 1 -->
+        <!-- ========================================= -->
+
         <section class="timeline-screen old">
+
+            <!-- SỬA: Ảnh nền -->
+
+            <div class="background"
+                 style="background-image:url('assets/timeline/1946.jpg')">
+
+            </div>
 
             <div class="timeline-dot"></div>
 
+            <!-- SỬA: left hoặc right -->
+
             <div class="timeline-card left">
 
-                <span class="year">1946</span>
+                <!-- SỬA: Năm -->
 
-                <h2>CHIẾN KHU</h2>
+                <div class="year">
+
+                    1946
+
+                </div>
+
+                <!-- SỬA: Tên -->
+
+                <h2>
+
+                    CHIẾN KHU
+
+                </h2>
+
+                <!-- SỬA: Nội dung -->
 
                 <p>
 
@@ -199,75 +242,148 @@
 
         </section>
 
-        <section class="timeline-screen old">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-card right">
-
-                <span class="year">1947</span>
-
-                <h2>VIỆT BẮC QUYẾT CHIẾN</h2>
-
-            </div>
-
-        </section>
+        <!-- ========================================= -->
+        <!-- MỐC 2 -->
+        <!-- ========================================= -->
 
         <section class="timeline-screen old">
 
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-card left">
-
-                <span class="year">1950</span>
-
-                <h2>BẮC SƠN</h2>
+            <div class="background"
+                 style="background-image:url('assets/timeline/1947.jpg')">
 
             </div>
-
-        </section>
-
-        <section class="timeline-screen middle">
 
             <div class="timeline-dot"></div>
 
             <div class="timeline-card right">
 
-                <span class="year">1957</span>
+                <div class="year">
 
-                <h2>QUÂN VIỆT BẮC</h2>
+                    1947
 
-            </div>
+                </div>
 
-        </section>
+                <h2>
 
-        <section class="timeline-screen middle">
+                    VIỆT BẮC QUYẾT CHIẾN
 
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-card left">
-
-                <span class="year">1976</span>
-
-                <h2>CHIẾN SĨ QUÂN KHU 1</h2>
-
-            </div>
-
-        </section>
-
-        <section class="timeline-screen modern">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-card right">
-
-                <span class="year">2026</span>
-
-                <h2>BÁO QUÂN KHU 1</h2>
+                </h2>
 
                 <p>
 
-                    Báo chí đa phương tiện.
+                    Đồng hành cùng cuộc kháng chiến.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================= -->
+        <!-- MỐC 3 -->
+        <!-- ========================================= -->
+
+        <section class="timeline-screen old">
+
+            <div class="background"
+                 style="background-image:url('assets/timeline/1950.jpg')">
+
+            </div>
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card left">
+
+                <div class="year">
+
+                    1950
+
+                </div>
+
+                <h2>
+
+                    BẮC SƠN
+
+                </h2>
+
+                <p>
+
+                    Giai đoạn phát triển trong kháng chiến.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================= -->
+        <!-- MỐC 4 -->
+        <!-- ========================================= -->
+
+        <section class="timeline-screen middle">
+
+            <div class="background"
+                 style="background-image:url('assets/timeline/1976.jpg')">
+
+            </div>
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card right">
+
+                <div class="year">
+
+                    1976
+
+                </div>
+
+                <h2>
+
+                    CHIẾN SĨ QUÂN KHU 1
+
+                </h2>
+
+                <p>
+
+                    Tiếp nối truyền thống trong thời kỳ mới.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================= -->
+        <!-- MỐC 5 -->
+        <!-- ========================================= -->
+
+        <section class="timeline-screen modern">
+
+            <div class="background"
+                 style="background-image:url('assets/timeline/2026.jpg')">
+
+            </div>
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card left">
+
+                <div class="year">
+
+                    2026
+
+                </div>
+
+                <h2>
+
+                    BÁO QUÂN KHU 1
+
+                </h2>
+
+                <p>
+
+                    CƠ QUAN CỦA ĐẢNG ỦY, BỘ TƯ LỆNH QUÂN KHU 1
+                    TIẾNG NÓI CỦA LỰC LƯỢNG VŨ TRANG QUÂN KHU 1
 
                 </p>
 
@@ -277,17 +393,21 @@
 
     </section>
 
+    <!-- ========================================= -->
     <!-- TRIỂN LÃM -->
+    <!-- ========================================= -->
 
-    <section id="gallery" class="screen gallery">
+    <section id="gallery" class="gallery">
 
-        <h2>
+        <h2 class="section-title">
 
             TRIỂN LÃM ẢNH
 
         </h2>
 
         <div class="gallery-grid">
+
+            <!-- SỬA: Thêm hoặc xóa ảnh -->
 
             <img src="assets/gallery/01.jpg">
 
@@ -305,11 +425,21 @@
 
     </section>
 
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
+
     <footer>
 
-        Kỷ niệm 80 năm Báo Quân khu 1
+        Kỷ niệm 80 năm Báo Quân khu 1 (1946–2026)
 
     </footer>
+
+    <!-- TỰ ĐỘNG SINH THUMBNAIL MẠNG XÃ HỘI -->
+
+    <script src="data/social.js"></script>
+
+    <!-- HIỆU ỨNG -->
 
     <script src="script.js"></script>
 

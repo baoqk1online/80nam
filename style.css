@@ -116,15 +116,12 @@ HERO
 
 .hero-content {
     position: absolute;
-
-    top: 50%;
     left: 50%;
-
+    top: 52%;
     transform: translate(-50%, -50%);
-
     text-align: center;
-
-    width: 90%;
+    width: min(900px, 90%);
+    z-index: 10;
 }
 
 .hero-number {
@@ -150,7 +147,7 @@ HERO
 .hero-button {
     display: inline-block;
 
-    margin-top: 40px;
+    margin-top: 50px;
 
     padding: 16px 42px;
 
@@ -394,7 +391,7 @@ TIMELINE
 .timeline-card {
     position: relative;
 
-    width: 520px;
+    width: min(520px, 42vw);
 
     padding: 36px;
 
@@ -481,6 +478,14 @@ GALLERY
 .gallery-card {
     overflow: hidden;
     border-radius: 18px;
+    background: #181c25;
+    transition: .3s;
+}
+
+.gallery-card:hover {
+
+    transform: translateY(-8px);
+
 }
 
 .gallery-card img {

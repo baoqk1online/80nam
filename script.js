@@ -273,14 +273,14 @@ window.addEventListener(
     }
 
 );
-/* ======================== */
-/* TIMELINE EFFECT */
-/* ======================== */
+/* =========================================
+
+TIMELINE EFFECT
+
+========================================= */
 
 const screens = document.querySelectorAll(
-
     ".timeline-screen"
-
 );
 
 const timelineObserver = new IntersectionObserver(
@@ -294,17 +294,13 @@ const timelineObserver = new IntersectionObserver(
                 screens.forEach(screen => {
 
                     screen.classList.remove(
-
                         "active"
-
                     );
 
                 });
 
                 entry.target.classList.add(
-
                     "active"
-
                 );
 
             }
@@ -339,13 +335,3 @@ renderSocial();
 renderTimeline();
 
 renderGallery();
-
-const screens = document.querySelectorAll(
-    ".timeline-screen"
-);
-
-screens.forEach(screen => {
-
-    timelineObserver.observe(screen);
-
-});

@@ -273,13 +273,17 @@ window.addEventListener(
     }
 
 );
-/* =========================================
+/* ======================== */
+/* TIMELINE EFFECT */
+/* ======================== */
 
-HIỆU ỨNG
+const screens = document.querySelectorAll(
 
-========================================= */
+    ".timeline-screen"
 
-const observer = new IntersectionObserver(
+);
+
+const timelineObserver = new IntersectionObserver(
 
     entries => {
 
@@ -287,9 +291,19 @@ const observer = new IntersectionObserver(
 
             if (entry.isIntersecting) {
 
+                screens.forEach(screen => {
+
+                    screen.classList.remove(
+
+                        "active"
+
+                    );
+
+                });
+
                 entry.target.classList.add(
 
-                    "show"
+                    "active"
 
                 );
 
@@ -301,11 +315,17 @@ const observer = new IntersectionObserver(
 
     {
 
-        threshold: 0.4
+        threshold: 0.65
 
     }
 
 );
+
+screens.forEach(screen => {
+
+    timelineObserver.observe(screen);
+
+});
 /* =========================================
 
 START

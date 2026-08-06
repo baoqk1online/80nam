@@ -6,13 +6,11 @@ window.products = [
 
         title: "Số báo đặc biệt kỷ niệm 80 năm",
 
-        thumbnail:
+        subtitle: "Ấn phẩm đặc biệt chào mừng 80 năm",
 
-            "assets/products/baoin.jpg",
+        thumbnail: "assets/products/baoin.jpg",
 
-        url:
-
-            "http://docbao.baoquankhu1.vn/"
+        url: "http://docbao.baoquankhu1.vn/"
 
     },
 
@@ -22,13 +20,11 @@ window.products = [
 
         title: "Phim truyền thống",
 
-        thumbnail:
+        subtitle: "Hành trình 80 năm Báo Quân khu 1",
 
-            "assets/products/phim.jpg",
+        thumbnail: "assets/products/phim.jpg",
 
-        url:
-
-            "https://baoquankhu1.vn/video/phong-su/chu-dong-chiem-linh-giu-vung-%E2%80%9Ctran-dia-so%E2%80%9D-6242-18.html"
+        url: "https://www.youtube.com/watch?v=qJ4LkBi4O50"
 
     },
 
@@ -36,15 +32,13 @@ window.products = [
 
         id: "website",
 
-        title: "Chuyên trang điện tử",
+        title: "Báo Quân khu 1 Điện tử",
 
-        thumbnail:
+        subtitle: "Website Báo Quân khu 1 Điện tử",
 
-            "assets/products/website.png",
+        thumbnail: "assets/products/website.png",
 
-        url:
-
-            "https://baoquankhu1.vn/"
+        url: "https://baoquankhu1.vn/"
 
     }
 

@@ -340,16 +340,12 @@ renderTimeline();
 
 renderGallery();
 
-document
-
-.querySelectorAll(
-
+const screens = document.querySelectorAll(
     ".timeline-screen"
+);
 
-)
+screens.forEach(screen => {
 
-.forEach(item => {
-
-    observer.observe(item);
+    timelineObserver.observe(screen);
 
 });

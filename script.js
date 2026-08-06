@@ -2,40 +2,54 @@
    KHỞI TẠO
 ========================================= */
 
-const productsContainer = document.getElementById(
-    "products-container"
-);
+const productsContainer =
+    document.getElementById(
+        "products-container"
+    );
 
-const socialContainer = document.getElementById(
-    "social-container"
-);
+const socialContainer =
+    document.getElementById(
+        "social-container"
+    );
 
-const timelineContainer = document.getElementById(
-    "timeline-container"
-);
+const timelineContainer =
+    document.getElementById(
+        "timeline-container"
+    );
 
-const galleryContainer = document.getElementById(
-    "gallery-container"
-);
+const galleryContainer =
+    document.getElementById(
+        "gallery-container"
+    );
 
-const progressBar = document.getElementById(
-    "progress-bar"
-);
+const progressBar =
+    document.getElementById(
+        "progress-bar"
+    );
+
+
 /* =========================================
    SẢN PHẨM
 ========================================= */
 
 function renderProducts() {
 
-    if (!productsContainer) return;
+    if (
+        !productsContainer ||
+        !Array.isArray(window.products)
+    ) {
+        return;
+    }
 
     productsContainer.innerHTML = "";
 
-    (window.products || []).forEach(item => {
+    window.products.forEach(item => {
 
-        const card = document.createElement("a");
+        const card =
+            document.createElement("a");
 
-        card.className = `product-card ${item.id}`;
+        card.className =
+            `product-card ${item.id}`;
 
         card.href = item.url;
 
@@ -56,26 +70,37 @@ function renderProducts() {
 
         `;
 
-        productsContainer.appendChild(card);
+        productsContainer.appendChild(
+            card
+        );
 
     });
 
 }
+
+
 /* =========================================
    MẠNG XÃ HỘI
 ========================================= */
 
 function renderSocial() {
 
-    if (!socialContainer) return;
+    if (
+        !socialContainer ||
+        !Array.isArray(window.social)
+    ) {
+        return;
+    }
 
     socialContainer.innerHTML = "";
 
-    (window.social || []).forEach(item => {
+    window.social.forEach(item => {
 
-        const card = document.createElement("a");
+        const card =
+            document.createElement("a");
 
-        card.className = "social-card";
+        card.className =
+            "social-card";
 
         card.href = item.url;
 
@@ -96,40 +121,54 @@ function renderSocial() {
 
         `;
 
-        socialContainer.appendChild(card);
+        socialContainer.appendChild(
+            card
+        );
 
     });
 
 }
+
+
 /* =========================================
-TIMELINE
+   TIMELINE
 ========================================= */
 
 function renderTimeline() {
 
-    if (!timelineContainer) return;
+    if (
+        !timelineContainer ||
+        !Array.isArray(window.timeline)
+    ) {
+        return;
+    }
 
     timelineContainer.innerHTML = "";
 
     window.timeline.forEach(item => {
 
-        const section = document.createElement("section");
+        const section =
+            document.createElement(
+                "section"
+            );
 
         section.className =
-            `timeline-screen active ${item.theme}`;
+            `timeline-screen ${item.theme}`;
 
         section.innerHTML = `
 
-            <div class="background"
-                 style="background-image:url('${item.background}')">
+            <div
+                class="background"
+                style="background-image:url('${item.background}')">
             </div>
 
             <div class="timeline-dot"></div>
 
             <div class="timeline-card ${item.side}">
 
-                <div class="year"
-                     style="color:${item.color}">
+                <div
+                    class="year"
+                    style="color:${item.color}">
 
                     ${item.year}
 
@@ -165,9 +204,7 @@ function renderTimeline() {
 
                         )
 
-                        .join("")
-
-                    }
+                        .join("")}
 
                 </div>
 
@@ -175,26 +212,36 @@ function renderTimeline() {
 
         `;
 
-        timelineContainer.appendChild(section);
+        timelineContainer.appendChild(
+            section
+        );
 
     });
 
 }
 
-renderTimeline();
+
 /* =========================================
    TRIỂN LÃM
 ========================================= */
 
 function renderGallery() {
 
-    if (!galleryContainer) return;
+    if (
+        !galleryContainer ||
+        !Array.isArray(window.gallery)
+    ) {
+        return;
+    }
 
     galleryContainer.innerHTML = "";
 
-    (window.gallery || []).forEach(item => {
+    window.gallery.forEach(item => {
 
-        const card = document.createElement("a");
+        const card =
+            document.createElement(
+                "a"
+            );
 
         card.className =
             `gallery-card ${item.type}`;
@@ -225,11 +272,15 @@ function renderGallery() {
 
         `;
 
-        galleryContainer.appendChild(card);
+        galleryContainer.appendChild(
+            card
+        );
 
     });
 
 }
+
+
 /* =========================================
    THANH TIẾN TRÌNH
 ========================================= */
@@ -240,17 +291,21 @@ window.addEventListener(
 
     () => {
 
-        const scrollTop = window.scrollY;
+        const scrollTop =
+            window.scrollY;
 
         const height =
 
-            document.documentElement.scrollHeight -
+            document.documentElement
+                .scrollHeight -
 
             window.innerHeight;
 
         const percent =
 
-            (scrollTop / height) * 100;
+            scrollTop /
+            height *
+            100;
 
         if (progressBar) {
 
@@ -263,61 +318,65 @@ window.addEventListener(
     }
 
 );
+
+
 /* =========================================
    HIỆU ỨNG TIMELINE
 ========================================= */
 
 function initTimeline() {
 
-    const screens = document.querySelectorAll(
+    const screens =
 
-        ".timeline-screen"
+        document.querySelectorAll(
 
-    );
+            ".timeline-screen"
 
-    if (screens.length === 0) {
+        );
+
+    if (!screens.length) {
 
         return;
 
     }
 
-    const observer = new IntersectionObserver(
+    const observer =
 
-        entries => {
+        new IntersectionObserver(
 
-            entries.forEach(entry => {
+            entries => {
 
-                if (entry.isIntersecting) {
+                entries.forEach(
 
-                    screens.forEach(screen => {
+                    entry => {
 
-                        screen.classList.remove(
+                        if (
 
-                            "active"
+                            entry.isIntersecting
 
-                        );
+                        ) {
 
-                    });
+                            entry.target.classList.add(
 
-                    entry.target.classList.add(
+                                "active"
 
-                        "active"
+                            );
 
-                    );
+                        }
 
-                }
+                    }
 
-            });
+                );
 
-        },
+            },
 
-        {
+            {
 
-            threshold: 0.65
+                threshold: 0.2
 
-        }
+            }
 
-    );
+        );
 
     screens.forEach(screen => {
 
@@ -326,6 +385,8 @@ function initTimeline() {
     });
 
 }
+
+
 /* =========================================
    START
 ========================================= */

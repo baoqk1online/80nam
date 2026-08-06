@@ -1,143 +1,63 @@
-/* =======================================
-
-TRIỂN LÃM ẢNH
-
-Chỉ sửa:
-
-- title
-- caption
-- image
-- link
-- type
-
-type:
-
-"landscape" = ảnh ngang
-
-"portrait" = ảnh dọc
-
-======================================= */
-
-const gallery = [
+window.gallery = [
 
     {
+        type: "photo",
 
-        title: "Tòa soạn qua các thời kỳ",
+        title: "Triển lãm ảnh số 1",
 
-        caption:
+        caption: "Những dấu ấn của Báo Quân khu 1.",
 
-            "Không gian làm việc của Báo Quân khu 1.",
-
-        image:
-
-            "assets/gallery/01.jpg",
-
-        link:
-
-            "assets/gallery/01-large.jpg",
-
-        type: "landscape"
-
+        image: "assets/products/phim.jpg"
     },
 
     {
+        type: "photo",
 
-        title: "Báo chí trên thao trường",
+        title: "Triển lãm ảnh số 2",
 
-        caption:
+        caption: "Hành trình 80 năm xây dựng và phát triển.",
 
-            "Phóng viên tác nghiệp tại đơn vị.",
-
-        image:
-
-            "assets/gallery/02.jpg",
-
-        link:
-
-            "assets/gallery/02-large.jpg",
-
-        type: "landscape"
-
+        image: "assets/products/phim.jpg"
     },
 
     {
+        type: "photo",
 
-        title: "Những số báo đặc biệt",
+        title: "Triển lãm ảnh số 3",
 
-        caption:
+        caption: "Các thế hệ cán bộ, phóng viên.",
 
-            "Các ấn phẩm tiêu biểu.",
-
-        image:
-
-            "assets/gallery/03.jpg",
-
-        link:
-
-            "assets/gallery/03-large.jpg",
-
-        type: "portrait"
-
+        image: "assets/products/phim.jpg"
     },
 
     {
+        type: "photo",
 
-        title: "Lễ kỷ niệm",
+        title: "Triển lãm ảnh số 4",
 
-        caption:
+        caption: "Hoạt động tác nghiệp.",
 
-            "Hoạt động chào mừng 80 năm.",
-
-        image:
-
-            "assets/gallery/04.jpg",
-
-        link:
-
-            "assets/gallery/04-large.jpg",
-
-        type: "landscape"
-
+        image: "assets/products/phim.jpg"
     },
 
     {
+        type: "photo",
 
-        title: "Phóng viên hiện trường",
+        title: "Triển lãm ảnh số 5",
 
-        caption:
+        caption: "Những trang báo qua các thời kỳ.",
 
-            "Tác nghiệp trong điều kiện dã ngoại.",
-
-        image:
-
-            "assets/gallery/05.jpg",
-
-        link:
-
-            "assets/gallery/05-large.jpg",
-
-        type: "landscape"
-
+        image: "assets/products/phim.jpg"
     },
 
     {
+        type: "photo",
 
-        title: "Báo Quân khu 1 hôm nay",
+        title: "Triển lãm ảnh số 6",
 
-        caption:
+        caption: "Báo chí đa phương tiện.",
 
-            "Cơ quan báo chí đa phương tiện.",
-
-        image:
-
-            "assets/gallery/06.jpg",
-
-        link:
-
-            "assets/gallery/06-large.jpg",
-
-        type: "landscape"
-
+        image: "assets/products/phim.jpg"
     }
 
 ];

@@ -122,3 +122,34 @@ footer {
     margin-bottom: 8px;
   }
 }
+/* ============================= */
+/* TỶ LỆ CỐ ĐỊNH */
+/* ============================= */
+
+/* Báo in A3 */
+
+.product-card.newspaper {
+
+    aspect-ratio: 0.707 / 1;
+}
+
+/* Phim tài liệu */
+
+.product-card.documentary {
+
+    aspect-ratio: 16 / 9;
+}
+
+/* Chuyên trang điện tử */
+
+.product-card.website {
+
+    aspect-ratio: 16 / 9;
+}
+
+/* Mạng xã hội */
+
+.social-card {
+
+    aspect-ratio: 16 / 9;
+}

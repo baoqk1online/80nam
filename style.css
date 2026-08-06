@@ -454,9 +454,9 @@ body {
     background: rgba(0,0,0,.75);
 
 }
-/* ======================== */
-/* TIMELINE */
-/* ======================== */
+/* =========================================
+   TIMELINE
+========================================= */
 
 #timeline {
 
@@ -464,11 +464,13 @@ body {
 
 }
 
+/* Mỗi màn hình */
+
 .timeline-screen {
 
     position: relative;
 
-    height: 100vh;
+    min-height: 100vh;
 
     overflow: hidden;
 
@@ -478,9 +480,11 @@ body {
 
     justify-content: center;
 
+    padding: 120px 0;
+
 }
 
-/* nền */
+/* Ảnh nền */
 
 .background {
 
@@ -492,13 +496,13 @@ body {
 
     background-position: center;
 
-    transform: scale(1.1);
+    transform: scale(1.08);
 
     transition:
 
-        transform 1.2s ease,
+        transform 1s ease,
 
-        opacity 1.2s ease;
+        opacity 1s ease;
 
 }
 
@@ -514,19 +518,19 @@ body {
 
         linear-gradient(
 
-            rgba(0,0,0,0.45),
+            rgba(0, 0, 0, 0.35),
 
-            rgba(0,0,0,0.7)
+            rgba(0, 0, 0, 0.8)
 
         );
 
 }
 
-/* đường timeline */
+/* Đường timeline */
 
 .timeline-line {
 
-    position: fixed;
+    position: absolute;
 
     top: 0;
 
@@ -538,13 +542,15 @@ body {
 
     transform: translateX(-50%);
 
-    background: rgba(255,255,255,0.15);
+    background:
 
-    z-index: 100;
+        rgba(255, 255, 255, 0.15);
+
+    z-index: 20;
 
 }
 
-/* chấm */
+/* Chấm mốc */
 
 .timeline-dot {
 
@@ -556,9 +562,9 @@ body {
 
     transform: translate(-50%, -50%);
 
-    width: 28px;
+    width: 24px;
 
-    height: 28px;
+    height: 24px;
 
     border-radius: 50%;
 
@@ -566,31 +572,31 @@ body {
 
     box-shadow:
 
-        0 0 20px rgba(212,175,55,.8);
+        0 0 20px rgba(212, 175, 55, .8);
 
-    z-index: 120;
+    z-index: 30;
 
 }
 
-/* khối thông tin */
+/* Khung nội dung */
 
 .timeline-card {
 
-    position: absolute;
+    position: relative;
 
-    width: 460px;
+    width: 500px;
 
     padding: 36px;
 
     border-radius: 24px;
 
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, .45);
 
     backdrop-filter: blur(16px);
 
     opacity: 0;
 
-    transform: translateY(60px);
+    transform: translateY(80px);
 
     transition:
 
@@ -598,21 +604,23 @@ body {
 
         transform .8s ease;
 
+    z-index: 40;
+
 }
 
 .timeline-card.left {
 
-    left: 8%;
+    margin-right: 55%;
 
 }
 
 .timeline-card.right {
 
-    right: 8%;
+    margin-left: 55%;
 
 }
 
-/* khi hiện */
+/* Hiệu ứng xuất hiện */
 
 .timeline-screen.active .timeline-card {
 
@@ -628,15 +636,17 @@ body {
 
 }
 
+/* Năm */
+
 .year {
 
     font-size: 72px;
 
-    font-weight: 700;
-
-    color: #d4af37;
+    font-weight: 800;
 
 }
+
+/* Tiêu đề */
 
 .timeline-card h2 {
 
@@ -648,7 +658,7 @@ body {
 
 .timeline-card h3 {
 
-    margin-top: 10px;
+    margin-top: 12px;
 
     font-size: 20px;
 
@@ -661,6 +671,70 @@ body {
     margin-top: 24px;
 
     line-height: 1.8;
+
+}
+
+/* Ảnh */
+
+.timeline-gallery {
+
+    margin-top: 24px;
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+}
+
+.timeline-gallery img {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+}
+
+/* Không khóa cuộn */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .timeline-line {
+
+        left: 30px;
+
+    }
+
+    .timeline-dot {
+
+        left: 30px;
+
+    }
+
+    .timeline-card {
+
+        width: calc(100% - 80px);
+
+        margin-left: 60px !important;
+
+        margin-right: 0 !important;
+
+    }
 
 }
 /* ============================= */

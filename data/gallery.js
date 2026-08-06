@@ -5,9 +5,11 @@ window.gallery = [
 
         title: "Triển lãm ảnh số 1",
 
-        caption: "Những dấu ấn của Báo Quân khu 1.",
+        caption:
+            "Những dấu ấn đầu tiên của Báo Quân khu 1.",
 
-        image: "assets/products/phim.jpg"
+        image:
+            "assets/gallery/01.jpg"
     },
 
     {
@@ -15,9 +17,11 @@ window.gallery = [
 
         title: "Triển lãm ảnh số 2",
 
-        caption: "Hành trình 80 năm xây dựng và phát triển.",
+        caption:
+            "Hành trình 80 năm xây dựng và phát triển.",
 
-        image: "assets/products/phim.jpg"
+        image:
+            "assets/gallery/02.jpg"
     },
 
     {
@@ -25,9 +29,11 @@ window.gallery = [
 
         title: "Triển lãm ảnh số 3",
 
-        caption: "Các thế hệ cán bộ, phóng viên.",
+        caption:
+            "Các thế hệ cán bộ, phóng viên.",
 
-        image: "assets/products/phim.jpg"
+        image:
+            "assets/gallery/03.jpg"
     },
 
     {
@@ -35,9 +41,11 @@ window.gallery = [
 
         title: "Triển lãm ảnh số 4",
 
-        caption: "Hoạt động tác nghiệp.",
+        caption:
+            "Hoạt động tác nghiệp trên mọi địa bàn.",
 
-        image: "assets/products/phim.jpg"
+        image:
+            "assets/gallery/04.jpg"
     },
 
     {
@@ -45,9 +53,11 @@ window.gallery = [
 
         title: "Triển lãm ảnh số 5",
 
-        caption: "Những trang báo qua các thời kỳ.",
+        caption:
+            "Những trang báo qua các thời kỳ.",
 
-        image: "assets/products/phim.jpg"
+        image:
+            "assets/gallery/05.jpg"
     },
 
     {
@@ -55,9 +65,11 @@ window.gallery = [
 
         title: "Triển lãm ảnh số 6",
 
-        caption: "Báo chí đa phương tiện.",
+        caption:
+            "Báo chí đa phương tiện trong thời đại số.",
 
-        image: "assets/products/phim.jpg"
+        image:
+            "assets/gallery/06.jpg"
     }
 
 ];

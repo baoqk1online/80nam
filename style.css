@@ -228,10 +228,36 @@ body {
 
     gap: 24px;
 
-    height: 900px;
+    min-height: 900px;
 
 }
+@media (max-width: 768px) {
 
+    .product-card.newspaper {
+
+        grid-column: auto;
+
+        grid-row: auto;
+
+    }
+
+    .product-card.documentary {
+
+        grid-column: auto;
+
+        grid-row: auto;
+
+    }
+
+    .product-card.website {
+
+        grid-column: auto;
+
+        grid-row: auto;
+
+    }
+
+}
 /* ---------------- */
 /* KHUNG CHUNG */
 /* ---------------- */

@@ -37,9 +37,9 @@ function renderProducts() {
 
         const card = document.createElement("a");
 
-        card.className =
+        card.classList.add("product-card");
 
-            `product-card ${item.id}`;
+        card.classList.add(item.id);
 
         card.href = item.url;
 
@@ -47,7 +47,10 @@ function renderProducts() {
 
         card.innerHTML = `
 
-            <img src="${item.thumbnail}">
+            <img
+                src="${item.thumbnail}"
+                alt="${item.title}"
+            >
 
             <div class="overlay">
 

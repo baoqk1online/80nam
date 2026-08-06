@@ -1,33 +1,51 @@
-const products = [
+window.products = [
 
     {
+
         id: "newspaper",
 
-        title: "Số báo đặc biệt kỷ niệm 80 năm ra số báo đầu tiên (19/08/1946-19/08/2026)",
+        title: "Số báo đặc biệt kỷ niệm 80 năm",
 
-        url: "",
+        thumbnail:
 
-        thumbnail: "assets/products/newspaper.jpg"
+            "assets/products/newspaper.jpg",
+
+        url:
+
+            "https://baoqk1online.github.io/80nam/newspaper"
+
     },
 
     {
+
         id: "documentary",
 
-        title: "Phim truyền thống 80 năm Báo Quân khu 1",
+        title: "Phim truyền thống",
 
-        url: "",
+        thumbnail:
 
-        thumbnail: "assets/products/documentary.jpg"
+            "assets/products/documentary.jpg",
+
+        url:
+
+            "https://youtube.com"
+
     },
 
     {
+
         id: "website",
 
-        title: "Trang Báo Quân khu 1 Điện tử",
+        title: "Chuyên trang điện tử",
 
-        url: "https://baoquankhu1.vn/",
+        thumbnail:
 
-        thumbnail: "assets/products/website.png"
+            "assets/products/website.jpg",
+
+        url:
+
+            "https://baoqk1online.github.io/80nam"
+
     }
 
 ];

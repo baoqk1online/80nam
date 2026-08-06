@@ -159,7 +159,10 @@ function renderTimeline() {
 
             <div
                 class="background"
-                style="background-image:url('${item.background}')">
+                style="
+                    background-image:
+                    url('${item.background}')
+                ">
             </div>
 
             <div class="timeline-dot"></div>
@@ -168,7 +171,9 @@ function renderTimeline() {
 
                 <div
                     class="year"
-                    style="color:${item.color}">
+                    style="
+                        color:${item.color}
+                    ">
 
                     ${item.year}
 
@@ -239,20 +244,21 @@ function renderGallery() {
     window.gallery.forEach(item => {
 
         const card =
-            document.createElement(
-                "a"
-            );
+            document.createElement("a");
 
         card.className =
             `gallery-card ${item.type}`;
 
-        card.href = item.link;
+        card.href = item.link || "#";
 
         card.target = "_blank";
 
         card.innerHTML = `
 
-            <img src="${item.image}">
+            <img
+                src="${item.image}"
+                alt="${item.title}"
+            >
 
             <div class="gallery-info">
 
@@ -285,39 +291,41 @@ function renderGallery() {
    THANH TIẾN TRÌNH
 ========================================= */
 
-window.addEventListener(
+function initProgressBar() {
 
-    "scroll",
+    window.addEventListener(
 
-    () => {
+        "scroll",
 
-        const scrollTop =
-            window.scrollY;
+        () => {
 
-        const height =
+            const scrollTop =
+                window.scrollY;
 
-            document.documentElement
-                .scrollHeight -
+            const height =
 
-            window.innerHeight;
+                document.documentElement
+                    .scrollHeight -
 
-        const percent =
+                window.innerHeight;
 
-            scrollTop /
-            height *
-            100;
+            const percent =
 
-        if (progressBar) {
+                (scrollTop / height) * 100;
 
-            progressBar.style.width =
+            if (progressBar) {
 
-                percent + "%";
+                progressBar.style.width =
+
+                    percent + "%";
+
+            }
 
         }
 
-    }
+    );
 
-);
+}
 
 
 /* =========================================
@@ -337,7 +345,6 @@ function initTimeline() {
     if (!screens.length) {
 
         return;
-
     }
 
     const observer =
@@ -372,7 +379,7 @@ function initTimeline() {
 
             {
 
-                threshold: 0.2
+                threshold: 0.25
 
             }
 
@@ -388,7 +395,7 @@ function initTimeline() {
 
 
 /* =========================================
-   START
+   KHỞI ĐỘNG
 ========================================= */
 
 document.addEventListener(
@@ -404,6 +411,8 @@ document.addEventListener(
         renderTimeline();
 
         renderGallery();
+
+        initProgressBar();
 
         initTimeline();
 

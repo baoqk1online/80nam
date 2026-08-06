@@ -117,7 +117,8 @@ function renderTimeline() {
             "section"
         );
 
-        section.className = `timeline-screen ${item.theme}`;
+        section.className =
+            `timeline-screen ${item.theme}`;
 
         section.innerHTML = `
 
@@ -133,7 +134,13 @@ function renderTimeline() {
 
             <div class="timeline-card ${item.side}">
 
-                <div class="year">
+                <div
+                    class="year"
+                    style="
+                        color:
+                        ${item.color || "#d4af37"}
+                    "
+                >
 
                     ${item.year}
 
@@ -165,7 +172,11 @@ function renderTimeline() {
 
                             img =>
 
-                            `<img src="${img}">`
+                            `
+                            <img
+                                src="${img}"
+                                alt="${item.title}">
+                            `
 
                         )
 

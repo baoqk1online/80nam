@@ -1,741 +1,124 @@
-/* =======================
-   RESET
-======================= */
-
-* {
-
-    margin: 0;
-
-    padding: 0;
-
-    box-sizing: border-box;
-
-}
-
-html {
-
-    scroll-behavior: smooth;
-
-    scroll-snap-type: y mandatory;
-
-}
-
 body {
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    background: #111;
-
-    color: white;
-
-    overflow-x: hidden;
-
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 16px;
+  line-height: 1.6;
 }
 
-
-/* =======================
-   THANH TIẾN TRÌNH
-======================= */
-
-#progress-bar {
-
-    position: fixed;
-
-    top: 0;
-
-    left: 0;
-
-    width: 0;
-
-    height: 4px;
-
-    background: #d50000;
-
-    z-index: 99999;
-
+h2, h3 {
+  color: #333;
 }
 
-
-/* =======================
-   MENU
-======================= */
-
-.header {
-
-    position: fixed;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    padding: 18px 40px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    z-index: 9999;
-
-    background: rgba(0, 0, 0, .45);
-
-    backdrop-filter: blur(15px);
-
+.controls {
+  margin: 15px 0;
 }
 
-.logo {
-
-    font-size: 22px;
-
-    font-weight: bold;
-
+.btn {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
-.header nav {
-
-    display: flex;
-
-    gap: 24px;
-
+.btn:hover {
+  background: #e0e0e0;
+  transform: translateY(-1px);
 }
 
-.header nav a {
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 15px;
-
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
-
-/* =======================
-   MÀN HÌNH
-======================= */
-
-.screen {
-
-    min-height: 100vh;
-
-    scroll-snap-align: start;
-
+.image-box {
+  width: 120px;
+  margin: 6px;
+  text-align: center;
 }
 
-
-/* =======================
-   HERO
-======================= */
-
-.hero {
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    overflow: hidden;
-
+.preview-img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.hero-bg {
-
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-
-        linear-gradient(
-
-            rgba(0,0,0,.45),
-
-            rgba(0,0,0,.8)
-
-        ),
-
-        url("assets/hero/hero.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
+.preview-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.hero-content {
-
-    position: relative;
-
-    z-index: 10;
-
-    padding: 20px;
-
+.progress-container {
+  width: 100%;
+  height: 14px;
+  background: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 4px;
 }
 
-.hero-number {
-
-    font-size: 240px;
-
-    font-weight: 900;
-
-    opacity: .18;
-
-    line-height: 1;
-
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  font-size: 11px;
+  color: #fff;
+  text-align: center;
+  transition: width 0.3s;
 }
 
-.hero h1 {
-
-    font-size: 72px;
-
-    margin-top: -70px;
-
+#log {
+  margin-top: 20px;
+  font-size: 0.9em;
 }
-
-.hero h2 {
-
-    margin-top: 20px;
-
-    font-size: 42px;
-
-}
-
-.hero p {
-
-    max-width: 700px;
-
-    margin: 30px auto;
-
-    font-size: 22px;
-
-    line-height: 1.8;
-
-}
-
-
-/* =======================
-   SẢN PHẨM
-======================= */
-
-.products {
-
-    background:
-
-        linear-gradient(
-
-            #161616,
-
-            #262626
-
-        );
-
-    padding: 100px 6%;
-
-}
-
-.products h2 {
-
-    text-align: center;
-
-    font-size: 48px;
-
-    margin-bottom: 50px;
-
-}
-
-.products-layout {
-
-    display: grid;
-
-    grid-template-columns: 1fr 1.4fr;
-
-    gap: 24px;
-
-}
-
-.right-column {
-
-    display: grid;
-
-    gap: 24px;
-
-}
-
-.product {
-
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 24px;
-
-    text-decoration: none;
-
-    color: white;
-
-}
-
-.product img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    transition: .5s;
-
-}
-
-.product:hover img {
-
-    transform: scale(1.08);
-
-}
-
-.newspaper {
-
-    aspect-ratio: 297 / 420;
-
-}
-
-.documentary {
-
-    aspect-ratio: 16 / 9;
-
-}
-
-.website {
-
-    aspect-ratio: 16 / 9;
-
-}
-
-.caption {
-
-    position: absolute;
-
-    left: 0;
-
-    right: 0;
-
-    bottom: 0;
-
-    padding: 24px;
-
-    font-size: 28px;
-
-    font-weight: bold;
-
-    background:
-
-        linear-gradient(
-
-            transparent,
-
-            rgba(0,0,0,.85)
-
-        );
-
-}
-
-
-/* =======================
-   MẠNG XÃ HỘI
-======================= */
-
-.social-row {
-
-    margin-top: 24px;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 24px;
-
-}
-
-.social-card {
-
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 18px;
-
-    text-decoration: none;
-
-    color: white;
-
-}
-
-.social-card img {
-
-    width: 100%;
-
-    aspect-ratio: 16 / 9;
-
-    object-fit: cover;
-
-}
-
-.social-card span {
-
-    position: absolute;
-
-    bottom: 18px;
-
-    left: 18px;
-
-    font-size: 24px;
-
-    font-weight: bold;
-
-}
-
-
-/* =======================
-   TIMELINE
-======================= */
-
-#timeline {
-
-    position: relative;
-
-}
-
-.timeline-line {
-
-    position: fixed;
-
-    top: 0;
-
-    bottom: 0;
-
-    left: 50%;
-
-    width: 4px;
-
-    transform: translateX(-50%);
-
-    background: rgba(255,255,255,.25);
-
-    z-index: 5;
-
-}
-
-.timeline-screen {
-
-    position: relative;
-
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-
-    scroll-snap-align: start;
-
-}
-
-.timeline-screen.old {
-
-    background:
-
-        linear-gradient(
-
-            rgba(70,50,20,.7),
-
-            rgba(30,20,10,.9)
-
-        ),
-
-        url("assets/timeline/old.jpg");
-
-    background-size: cover;
-
-}
-
-.timeline-screen.middle {
-
-    background:
-
-        linear-gradient(
-
-            rgba(40,40,40,.7),
-
-            rgba(20,20,20,.9)
-
-        ),
-
-        url("assets/timeline/middle.jpg");
-
-    background-size: cover;
-
-}
-
-.timeline-screen.modern {
-
-    background:
-
-        linear-gradient(
-
-            rgba(0,30,60,.7),
-
-            rgba(0,10,30,.9)
-
-        ),
-
-        url("assets/timeline/modern.jpg");
-
-    background-size: cover;
-
-}
-
-.timeline-dot {
-
-    position: absolute;
-
-    left: 50%;
-
-    width: 28px;
-
-    height: 28px;
-
-    background: #d00000;
-
-    border-radius: 50%;
-
-    transform: translateX(-50%);
-
-    z-index: 20;
-
-}
-
-.timeline-card {
-
-    width: 430px;
-
-    padding: 36px;
-
-    border-radius: 24px;
-
-    background: rgba(255,255,255,.12);
-
-    backdrop-filter: blur(20px);
-
-    position: absolute;
-
-}
-
-.timeline-card.left {
-
-    left: 8%;
-
-}
-
-.timeline-card.right {
-
-    right: 8%;
-
-}
-
-.year {
-
-    display: block;
-
-    font-size: 90px;
-
-    font-weight: 900;
-
-    color: #ffd700;
-
-}
-
-.timeline-card h2 {
-
-    margin: 20px 0;
-
-    font-size: 42px;
-
-}
-
-.timeline-card p {
-
-    line-height: 1.8;
-
-    font-size: 18px;
-
-}
-
-
-/* =======================
-   TRIỂN LÃM
-======================= */
-
-.gallery {
-
-    background: #111;
-
-    padding: 100px 6%;
-
-}
-
-.gallery h2 {
-
-    text-align: center;
-
-    font-size: 48px;
-
-    margin-bottom: 50px;
-
-}
-
-.gallery-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-
-}
-
-.gallery-grid img {
-
-    width: 100%;
-
-    border-radius: 16px;
-
-    display: block;
-
-}
-
-
-/* =======================
-   FOOTER
-======================= */
 
 footer {
-
-    background: black;
-
-    text-align: center;
-
-    padding: 50px;
-
-    color: #999;
-
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 0.85em;
+  color: #666;
 }
 
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+}
 
-/* =======================
-   MOBILE
-======================= */
+.modal-content {
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  margin: 5% auto;
+  border-radius: 6px;
+}
 
-@media (max-width: 900px) {
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+}
 
-    .header {
-
-        padding: 15px;
-
-    }
-
-    .header nav {
-
-        display: none;
-
-    }
-
-    .hero-number {
-
-        font-size: 140px;
-
-    }
-
-    .hero h1 {
-
-        font-size: 42px;
-
-        margin-top: -40px;
-
-    }
-
-    .hero h2 {
-
-        font-size: 26px;
-
-    }
-
-    .hero p {
-
-        font-size: 17px;
-
-    }
-
-    .products-layout {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .social-row {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .timeline-line {
-
-        left: 24px;
-
-    }
-
-    .timeline-dot {
-
-        left: 24px;
-
-    }
-
-    .timeline-card {
-
-        width: calc(100% - 70px);
-
-        left: 55px !important;
-
-        right: auto !important;
-
-        padding: 24px;
-
-    }
-
-    .year {
-
-        font-size: 56px;
-
-    }
-
-    .timeline-card h2 {
-
-        font-size: 28px;
-
-    }
-
-    .gallery-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
+@media (max-width: 480px) {
+  .image-box {
+    width: 48%;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
 }

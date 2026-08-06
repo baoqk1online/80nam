@@ -574,12 +574,15 @@ MOBILE
     }
 
     .timeline-card {
-        width: calc(100% - 90px);
-
-        margin-left: 60px !important;
-
-        margin-right: 0 !important;
-    }
+    
+        width: calc(100% - 80px);
+    
+        margin-left: 70px !important;
+    
+        margin-right: 10px !important;
+    
+        padding: 24px;
+     }
 
     #gallery-container {
         grid-template-columns: 1fr;

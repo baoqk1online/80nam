@@ -1,1094 +1,438 @@
-/* ============================= */
-/* RESET */
-/* ============================= */
+/* ===========================
+RESET
+=========================== */
 
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
 body {
-
     font-family: Arial, sans-serif;
-
     background: #0f1117;
-
-    color: white;
-
+    color: #fff;
     overflow-x: hidden;
-
 }
 
-
-/* ============================= */
-/* THANH TIẾN TRÌNH */
-/* ============================= */
+/* ===========================
+THANH TIẾN TRÌNH
+=========================== */
 
 #progress-bar {
-
     position: fixed;
-
     top: 0;
-
     left: 0;
-
     width: 0;
-
     height: 4px;
-
     background: #d4af37;
-
     z-index: 99999;
-
 }
 
-
-/* ============================= */
-/* MENU */
-/* ============================= */
+/* ===========================
+HEADER
+=========================== */
 
 .header {
-
     position: fixed;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     padding: 18px 40px;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
-    z-index: 1000;
-
+    z-index: 9999;
     backdrop-filter: blur(12px);
-
     background: rgba(0,0,0,.45);
-
 }
 
 .logo {
-
     font-size: 22px;
-
     font-weight: bold;
-
     letter-spacing: 2px;
-
 }
 
 .header nav {
-
     display: flex;
-
     gap: 24px;
-
 }
 
 .header a {
-
     color: white;
-
     text-decoration: none;
-
 }
-/* ============================= */
-/* HERO */
-/* ============================= */
+
+/* ===========================
+HERO
+=========================== */
 
 #hero {
-
     height: 100vh;
-
     position: relative;
-
-}
-
-#hero-container {
-
-    height: 100%;
-
 }
 
 .hero-bg {
-
     position: absolute;
-
     inset: 0;
-
-    background-image: url("assets/hero/bg.jpg");
-
+    background: url("assets/hero/bg.jpg");
     background-size: cover;
-
     background-position: center;
-
 }
 
 .hero-bg::after {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
-
-    background:
-
-        linear-gradient(
-
-            rgba(0,0,0,.2),
-
-            rgba(0,0,0,.8)
-
-        );
-
+    background: linear-gradient(
+        rgba(0,0,0,.2),
+        rgba(0,0,0,.8)
+    );
 }
 
 .hero-content {
-
     position: absolute;
-
     left: 50%;
-
     top: 50%;
-
     transform: translate(-50%, -50%);
-
     text-align: center;
-
 }
 
 .hero-number {
-
     font-size: 180px;
-
     font-weight: 800;
-
     color: rgba(255,255,255,.15);
-
 }
 
 .hero-content h1 {
-
     font-size: 60px;
-
-}
-
-.hero-content h2 {
-
-    margin-top: 10px;
-
 }
 
 .hero-content p {
-
     margin-top: 24px;
-
-    max-width: 700px;
-
-    line-height: 1.7;
-
-}
-/* ============================= */
-/* KHỐI SẢN PHẨM */
-/* ============================= */
-
-#products {
-
-    min-height: 100vh;
-
-    padding: 120px 60px;
-
-}
-
-#products-container {
-
-    display: grid;
-
-    grid-template-columns: 1.4fr 1fr;
-
-    grid-template-rows: 1fr 1fr;
-
-    gap: 24px;
-
-    min-height: 900px;
-
-}
-@media (max-width: 768px) {
-
-    .product-card.newspaper {
-
-        grid-column: auto;
-
-        grid-row: auto;
-
-    }
-
-    .product-card.documentary {
-
-        grid-column: auto;
-
-        grid-row: auto;
-
-    }
-
-    .product-card.website {
-
-        grid-column: auto;
-
-        grid-row: auto;
-
-    }
-
-}
-/* ---------------- */
-/* KHUNG CHUNG */
-/* ---------------- */
-
-.product-card {
-
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 18px;
-
-    text-decoration: none;
-
-    color: white;
-
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
-
-    transition: transform 0.35s ease;
-
-}
-
-.product-card:hover {
-
-    transform: translateY(-8px);
-
-}
-
-.product-card img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.5s ease;
-
-}
-
-.product-card:hover img {
-
-    transform: scale(1.05);
-
-}
-
-/* ---------------- */
-/* BÁO IN */
-/* ---------------- */
-
-.product-card.newspaper {
-
-    grid-column: 1;
-
-    grid-row: 1 / span 2;
-
-}
-
-/* ---------------- */
-/* PHIM */
-/* ---------------- */
-
-.product-card.documentary {
-
-    grid-column: 2;
-
-    grid-row: 1;
-
-}
-
-/* ---------------- */
-/* CHUYÊN TRANG */
-/* ---------------- */
-
-.product-card.website {
-
-    grid-column: 2;
-
-    grid-row: 2;
-
-}
-
-/* ---------------- */
-/* LỚP PHỦ */
-/* ---------------- */
-
-.overlay {
-
-    position: absolute;
-
-    left: 0;
-
-    right: 0;
-
-    bottom: 0;
-
-    padding: 30px;
-
-    background:
-
-        linear-gradient(
-
-            transparent 10%,
-
-            rgba(0, 0, 0, 0.85)
-
-        );
-
-}
-
-.overlay h3 {
-
-    font-size: 32px;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-}
-
-/* ---------------- */
-/* BIỂU TƯỢNG LINK */
-/* ---------------- */
-
-.overlay::after {
-
-    content: "↗";
-
-    position: absolute;
-
-    top: 20px;
-
-    right: 24px;
-
-    font-size: 28px;
-
-    opacity: 0.8;
-
-}
-/* ============================= */
-/* SOCIAL */
-/* ============================= */
-
-#social-container {
-
-    margin-top: 24px;
-
-    display: grid;
-
-    grid-template-columns:
-
-        repeat(4, 1fr);
-
-    gap: 18px;
-
-}
-
-.social-card {
-
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 14px;
-
-    text-decoration: none;
-
-    color: white;
-
-}
-
-.social-card img {
-
-    width: 100%;
-
-    aspect-ratio: 16 / 9;
-
-    object-fit: cover;
-
-}
-
-.social-title {
-
-    position: absolute;
-
-    left: 0;
-
-    right: 0;
-
-    bottom: 0;
-
-    padding: 12px;
-
-    background: rgba(0,0,0,.75);
-
-}
-/* =========================================
-   TIMELINE
-========================================= */
-
-#timeline {
-
-    position: relative;
-
-}
-
-/* Mỗi màn hình */
-
-.timeline-screen {
-
-    position: relative;
-
-    min-height: 100vh;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 120px 0;
-
-}
-
-/* Ảnh nền */
-
-.background {
-
-    position: absolute;
-
-    inset: 0;
-
-    background-size: cover;
-
-    background-position: center;
-
-    transform: scale(1.08);
-
-    transition:
-
-        transform 1s ease,
-
-        opacity 1s ease;
-
-}
-
-.background::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-
-        linear-gradient(
-
-            rgba(0, 0, 0, 0.35),
-
-            rgba(0, 0, 0, 0.8)
-
-        );
-
-}
-
-/* Đường timeline */
-
-.timeline-line {
-
-    position: absolute;
-
-    top: 0;
-
-    bottom: 0;
-
-    left: 50%;
-
-    width: 4px;
-
-    transform: translateX(-50%);
-
-    background:
-
-        rgba(255, 255, 255, 0.15);
-
-    z-index: 20;
-
-}
-
-/* Chấm mốc */
-
-.timeline-dot {
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: 24px;
-
-    height: 24px;
-
-    border-radius: 50%;
-
-    background: #d4af37;
-
-    box-shadow:
-
-        0 0 20px rgba(212, 175, 55, .8);
-
-    z-index: 30;
-
-}
-
-/* Khung nội dung */
-
-.timeline-card {
-
-    position: relative;
-
-    width: 500px;
-
-    padding: 36px;
-
-    border-radius: 24px;
-
-    background: rgba(0, 0, 0, .45);
-
-    backdrop-filter: blur(16px);
-
-    opacity: 0;
-
-    transform: translateY(80px);
-
-    transition:
-
-        opacity .8s ease,
-
-        transform .8s ease;
-
-    z-index: 40;
-
-}
-
-.timeline-card.left {
-
-    margin-right: 55%;
-
-}
-
-.timeline-card.right {
-
-    margin-left: 55%;
-
-}
-
-/* Hiệu ứng xuất hiện */
-
-.timeline-screen.active .timeline-card {
-
-    opacity: 1;
-
-    transform: translateY(0);
-
-}
-
-.timeline-screen.active .background {
-
-    transform: scale(1);
-
-}
-
-/* Năm */
-
-.year {
-
-    font-size: 72px;
-
-    font-weight: 800;
-
-}
-
-/* Tiêu đề */
-
-.timeline-card h2 {
-
-    margin-top: 12px;
-
-    font-size: 38px;
-
-}
-
-.timeline-card h3 {
-
-    margin-top: 12px;
-
-    font-size: 20px;
-
-    opacity: .85;
-
-}
-
-.timeline-card p {
-
-    margin-top: 24px;
-
     line-height: 1.8;
-
 }
 
-/* Ảnh */
-
-.timeline-gallery {
-
-    margin-top: 24px;
-
-    display: grid;
-
-    grid-template-columns:
-
-        repeat(3, 1fr);
-
-    gap: 10px;
-
+.hero-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 16px 40px;
+    border-radius: 999px;
+    background: #d4af37;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.timeline-gallery img {
-
-    width: 100%;
-
-    aspect-ratio: 4 / 3;
-
-    object-fit: cover;
-
-    border-radius: 10px;
-
-}
-
-/* Không khóa cuộn */
-
-html {
-
-    scroll-behavior: smooth;
-
-}
-
-/* Mobile */
-
-@media (max-width: 768px) {
-
-    .timeline-line {
-
-        left: 30px;
-
-    }
-
-    .timeline-dot {
-
-        left: 30px;
-
-    }
-
-    .timeline-card {
-
-        width: calc(100% - 80px);
-
-        margin-left: 60px !important;
-
-        margin-right: 0 !important;
-
-    }
-
-}
-/* ============================= */
-/* TRIỂN LÃM */
-/* ============================= */
-
-#gallery {
-
-    padding: 100px 60px;
-
-}
-
-#gallery-container {
-
-    display: grid;
-
-    grid-template-columns:
-
-        repeat(3, 1fr);
-
-    gap: 20px;
-
-}
-
-.gallery-card {
-
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 16px;
-
-}
-
-.gallery-card img {
-
-    width: 100%;
-
-    display: block;
-
-}
-
-.gallery-info {
-
-    position: absolute;
-
-    left: 0;
-
-    right: 0;
-
-    bottom: 0;
-
-    padding: 18px;
-
-    background:
-
-        linear-gradient(
-
-            transparent,
-
-            rgba(0,0,0,.9)
-
-        );
-
-}
-@media (max-width: 768px) {
-
-    .header nav {
-
-        display: none;
-
-    }
-
-    #products-container {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    #social-container {
-
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-
-    .timeline-line {
-
-        left: 24px;
-
-    }
-
-    .timeline-dot {
-
-        left: 24px;
-
-    }
-
-    .timeline-card {
-
-        width: calc(100% - 60px);
-
-        left: 50px !important;
-
-        right: auto !important;
-
-    }
-
-    #gallery-container {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .hero-number {
-
-        font-size: 120px;
-
-    }
-
-    .hero-content h1 {
-
-        font-size: 36px;
-
-    }
-
-}
-/* ============================= */
-/* TỶ LỆ CỐ ĐỊNH */
-/* ============================= */
-
-/* Báo in A3 */
-
-.product-card.newspaper {
-
-    aspect-ratio: 0.707 / 1;
-}
-
-/* Phim tài liệu */
-
-.product-card.documentary {
-
-    aspect-ratio: 16 / 9;
-}
-
-/* Chuyên trang điện tử */
-
-.product-card.website {
-
-    aspect-ratio: 16 / 9;
-}
-
-/* Mạng xã hội */
-
-.social-card {
-
-    aspect-ratio: 16 / 9;
-}
-/* =========================================
-   TIÊU ĐỀ CHUNG
-========================================= */
+/* ===========================
+TIÊU ĐỀ
+=========================== */
 
 .section-title {
-
     text-align: center;
-
     font-size: 54px;
-
-    font-weight: 700;
-
     margin-bottom: 20px;
-
-    letter-spacing: 3px;
-
 }
 
 .section-subtitle {
-
     text-align: center;
-
     font-size: 22px;
-
     opacity: .8;
-
     margin-bottom: 60px;
-
 }
+
+/* ===========================
+PRODUCTS
+=========================== */
+
+#products {
+    padding: 120px 60px;
+}
+
+#products-container {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 24px;
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #111;
+}
+
+.product-card.newspaper {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    min-height: 850px;
+}
+
+.product-card.documentary {
+    grid-column: 2;
+    min-height: 410px;
+}
+
+.product-card.website {
+    grid-column: 2;
+    min-height: 410px;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,.9)
+    );
+}
+
+/* ===========================
+SOCIAL
+=========================== */
 
 .social-title-main {
-
     text-align: center;
-
     font-size: 42px;
-
     margin-top: 100px;
-
     margin-bottom: 40px;
-
 }
 
-
-/* =========================================
-   NÚT HERO
-========================================= */
-
-.hero-button {
-
-    display: inline-block;
-
-    margin-top: 40px;
-
-    padding: 16px 42px;
-
-    border-radius: 999px;
-
-    background: #d4af37;
-
-    color: #111;
-
-    font-weight: 700;
-
-    text-decoration: none;
-
-    transition: .3s;
-
-}
-
-.hero-button:hover {
-
-    transform: translateY(-4px);
-
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer {
-
-    padding: 120px 40px;
-
-    text-align: center;
-
-    background: #080b12;
-
-}
-
-.footer-number {
-
-    font-size: 140px;
-
-    font-weight: 800;
-
-    color: rgba(255,255,255,.1);
-
-}
-
-.footer-title {
-
-    font-size: 48px;
-
-    margin-top: -40px;
-
-}
-
-.footer-year {
-
-    margin-top: 20px;
-
-    font-size: 28px;
-
-    color: #d4af37;
-
-}
-
-.footer-text {
-
-    margin-top: 24px;
-
-    opacity: .75;
-
-}
-
-
-/* =========================================
-   GALLERY
-========================================= */
-
-.gallery-card {
-
-    aspect-ratio: 4 / 3;
-
-}
-
-.gallery-card img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: .4s;
-
-}
-
-.gallery-card:hover img {
-
-    transform: scale(1.06);
-
-}
-
-
-/* =========================================
-   TIMELINE GALLERY
-========================================= */
-
-.timeline-gallery {
-
-    margin-top: 24px;
-
+#social-container {
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 10px;
-
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
 }
 
-.timeline-gallery img {
+.social-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+}
 
+.social-card img {
     width: 100%;
-
-    aspect-ratio: 4 / 3;
-
+    aspect-ratio: 16/9;
     object-fit: cover;
-
-    border-radius: 10px;
-
 }
 
+.social-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    background: rgba(0,0,0,.75);
+}
 
-/* =========================================
-   CUỘN TỪNG MÀN HÌNH
-========================================= */
+/* ===========================
+TIMELINE
+=========================== */
 
-html {
+#timeline {
+    position: relative;
+}
 
-    scroll-snap-type: y mandatory;
-
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,.15);
 }
 
 .timeline-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0;
+    position: relative;
+}
 
-    scroll-snap-align: start;
+.background {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+}
 
+.background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: #d4af37;
+    z-index: 20;
+}
+
+.timeline-card {
+    position: relative;
+    width: 500px;
+    padding: 36px;
+    border-radius: 24px;
+    background: rgba(0,0,0,.45);
+    backdrop-filter: blur(14px);
+    z-index: 30;
+}
+
+.timeline-card.left {
+    margin-right: 55%;
+}
+
+.timeline-card.right {
+    margin-left: 55%;
+}
+
+.year {
+    font-size: 72px;
+    font-weight: 800;
+}
+
+.timeline-card h2 {
+    margin-top: 12px;
+    font-size: 38px;
+}
+
+.timeline-card h3 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.timeline-card p {
+    margin-top: 24px;
+    line-height: 1.8;
+}
+
+.timeline-gallery {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.timeline-gallery img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ===========================
+GALLERY
+=========================== */
+
+#gallery {
+    padding: 100px 60px;
+}
+
+#gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.gallery-card {
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.gallery-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+/* ===========================
+FOOTER
+=========================== */
+
+footer {
+    padding: 120px 40px;
+    text-align: center;
+    background: #080b12;
+}
+
+/* ===========================
+MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .header nav {
+        display: none;
+    }
+
+    #products {
+        padding: 100px 20px;
+    }
+
+    #products-container {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card.newspaper,
+    .product-card.documentary,
+    .product-card.website {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: auto;
+    }
+
+    #social-container {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .timeline-line {
+        left: 30px;
+    }
+
+    .timeline-dot {
+        left: 30px;
+    }
+
+    .timeline-card {
+        width: calc(100% - 90px);
+        margin-left: 60px !important;
+        margin-right: 0 !important;
+    }
+
+    #gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-number {
+        font-size: 120px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
 }

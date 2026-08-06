@@ -1,7 +1,5 @@
 /* =========================================
-
-KHỞI TẠO
-
+   KHỞI TẠO
 ========================================= */
 
 const productsContainer = document.getElementById(
@@ -24,22 +22,20 @@ const progressBar = document.getElementById(
     "progress-bar"
 );
 /* =========================================
-
-SẢN PHẨM
-
+   SẢN PHẨM
 ========================================= */
 
 function renderProducts() {
 
+    if (!productsContainer) return;
+
     productsContainer.innerHTML = "";
 
-    products.forEach(item => {
+    (window.products || []).forEach(item => {
 
         const card = document.createElement("a");
 
-        card.classList.add("product-card");
-
-        card.classList.add(item.id);
+        card.className = `product-card ${item.id}`;
 
         card.href = item.url;
 
@@ -66,28 +62,31 @@ function renderProducts() {
 
 }
 /* =========================================
-
-MẠNG XÃ HỘI
-
+   MẠNG XÃ HỘI
 ========================================= */
 
 function renderSocial() {
 
+    if (!socialContainer) return;
+
     socialContainer.innerHTML = "";
 
-    social.forEach(item => {
+    (window.social || []).forEach(item => {
 
         const card = document.createElement("a");
+
+        card.className = "social-card";
 
         card.href = item.url;
 
         card.target = "_blank";
 
-        card.className = "social-card";
-
         card.innerHTML = `
 
-            <img src="${item.thumbnail}">
+            <img
+                src="${item.thumbnail}"
+                alt="${item.title}"
+            >
 
             <div class="social-title">
 
@@ -103,34 +102,32 @@ function renderSocial() {
 
 }
 /* =========================================
-
-TIMELINE
-
+   TIMELINE
 ========================================= */
 
 function renderTimeline() {
 
+    if (!timelineContainer) return;
+
     timelineContainer.innerHTML = "";
 
-    timeline.forEach(item => {
+    (window.timeline || []).forEach(item => {
 
         const section = document.createElement(
-
             "section"
-
         );
 
-        section.className =
-
-            `timeline-screen ${item.theme}`;
+        section.className = `timeline-screen ${item.theme}`;
 
         section.innerHTML = `
 
-            <div class="background"
-
-                 style="background-image:url('${item.background}')">
-
-            </div>
+            <div
+                class="background"
+                style="
+                    background-image:
+                    url('${item.background}')
+                "
+            ></div>
 
             <div class="timeline-dot"></div>
 
@@ -162,13 +159,18 @@ function renderTimeline() {
 
                 <div class="timeline-gallery">
 
-                    ${item.images.map(
+                    ${(item.images || [])
 
-                        img =>
+                        .map(
 
-                        `<img src="${img}">`
+                            img =>
 
-                    ).join("")}
+                            `<img src="${img}">`
+
+                        )
+
+                        .join("")
+                    }
 
                 </div>
 
@@ -177,34 +179,27 @@ function renderTimeline() {
         `;
 
         timelineContainer.appendChild(
-
             section
-
         );
 
     });
 
 }
 /* =========================================
-
-TRIỂN LÃM
-
+   TRIỂN LÃM
 ========================================= */
 
 function renderGallery() {
 
+    if (!galleryContainer) return;
+
     galleryContainer.innerHTML = "";
 
-    gallery.forEach(item => {
+    (window.gallery || []).forEach(item => {
 
-        const card = document.createElement(
-
-            "a"
-
-        );
+        const card = document.createElement("a");
 
         card.className =
-
             `gallery-card ${item.type}`;
 
         card.href = item.link;
@@ -239,9 +234,7 @@ function renderGallery() {
 
 }
 /* =========================================
-
-THANH TIẾN TRÌNH
-
+   THANH TIẾN TRÌNH
 ========================================= */
 
 window.addEventListener(
@@ -250,88 +243,112 @@ window.addEventListener(
 
     () => {
 
-        const scrollTop =
-
-            window.scrollY;
+        const scrollTop = window.scrollY;
 
         const height =
 
-            document.documentElement
-
-            .scrollHeight -
+            document.documentElement.scrollHeight -
 
             window.innerHeight;
 
         const percent =
 
-            scrollTop / height * 100;
+            (scrollTop / height) * 100;
 
-        progressBar.style.width =
+        if (progressBar) {
 
-            percent + "%";
+            progressBar.style.width =
+
+                percent + "%";
+
+        }
 
     }
 
 );
 /* =========================================
-
-TIMELINE EFFECT
-
+   HIỆU ỨNG TIMELINE
 ========================================= */
 
-const screens = document.querySelectorAll(
-    ".timeline-screen"
-);
+function initTimeline() {
 
-const timelineObserver = new IntersectionObserver(
+    const screens = document.querySelectorAll(
 
-    entries => {
+        ".timeline-screen"
 
-        entries.forEach(entry => {
+    );
 
-            if (entry.isIntersecting) {
+    if (screens.length === 0) {
 
-                screens.forEach(screen => {
+        return;
 
-                    screen.classList.remove(
+    }
+
+    const observer = new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    screens.forEach(screen => {
+
+                        screen.classList.remove(
+
+                            "active"
+
+                        );
+
+                    });
+
+                    entry.target.classList.add(
+
                         "active"
+
                     );
 
-                });
+                }
 
-                entry.target.classList.add(
-                    "active"
-                );
+            });
 
-            }
+        },
 
-        });
+        {
 
-    },
+            threshold: 0.65
 
-    {
+        }
 
-        threshold: 0.65
+    );
+
+    screens.forEach(screen => {
+
+        observer.observe(screen);
+
+    });
+
+}
+/* =========================================
+   START
+========================================= */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    () => {
+
+        renderProducts();
+
+        renderSocial();
+
+        renderTimeline();
+
+        renderGallery();
+
+        initTimeline();
 
     }
 
 );
-
-screens.forEach(screen => {
-
-    timelineObserver.observe(screen);
-
-});
-/* =========================================
-
-START
-
-========================================= */
-
-renderProducts();
-
-renderSocial();
-
-renderTimeline();
-
-renderGallery();

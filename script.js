@@ -52,6 +52,8 @@ function renderProducts() {
 
             card.target = "_blank";
 
+            card.rel = "noopener";
+
             card.innerHTML = `
 
                 <img
@@ -61,7 +63,11 @@ function renderProducts() {
 
                 <div class="overlay">
 
-                    <h3>${item.title}</h3>
+                    <h3>
+
+                        ${item.title}
+
+                    </h3>
 
                 </div>
 
@@ -96,11 +102,13 @@ function renderSocial() {
                 document.createElement("a");
 
             card.className =
-                "social-card";
+                `social-card ${item.platform}`;
 
             card.href = item.url;
 
             card.target = "_blank";
+
+            card.rel = "noopener";
 
             card.innerHTML = `
 
@@ -152,16 +160,24 @@ function renderTimeline() {
 
             section.innerHTML = `
 
-                <div class="background"
-                     style="background-image:url('${item.background}')">
-                </div>
+                <div
+                    class="background"
+                    style="
+                        background-image:
+                        url('${item.background}')
+                    "
+                ></div>
 
                 <div class="timeline-dot"></div>
 
                 <div class="timeline-card ${item.side}">
 
-                    <div class="year"
-                         style="color:${item.color}">
+                    <div
+                        class="year"
+                        style="
+                            color:${item.color}
+                        "
+                    >
 
                         ${item.year}
 
@@ -187,17 +203,28 @@ function renderTimeline() {
 
                     <div class="timeline-gallery">
 
-                        ${(item.images || [])
+                        ${
 
-                            .map(
+                            (item.images || [])
 
-                                img =>
+                                .map(
 
-                                `<img src="${img}">`
+                                    img =>
 
-                            )
+                                    `
 
-                            .join("")}
+                                    <img
+                                        src="${img}"
+                                        alt=""
+                                    >
+
+                                    `
+
+                                )
+
+                                .join("")
+
+                        }
 
                     </div>
 
@@ -242,6 +269,7 @@ function renderGallery() {
 
                 <img
                     src="${item.image}"
+                    alt="${item.title}"
                 >
 
                 <div class="gallery-info">
@@ -277,27 +305,33 @@ function renderGallery() {
 THANH TIẾN TRÌNH
 ========================================= */
 
-window.addEventListener(
+function initProgressBar() {
 
-    "scroll",
+    if (!progressBar) return;
 
-    () => {
+    window.addEventListener(
 
-        const scrollTop =
-            window.scrollY;
+        "scroll",
 
-        const height =
+        () => {
 
-            document.documentElement
-                .scrollHeight -
+            const scrollTop =
+                window.scrollY;
 
-            window.innerHeight;
+            const height =
 
-        const percent =
+                document.documentElement
+                    .scrollHeight -
 
-            scrollTop / height * 100;
+                window.innerHeight;
 
-        if (progressBar) {
+            const percent =
+
+                height > 0
+
+                    ? scrollTop / height * 100
+
+                    : 0;
 
             progressBar.style.width =
 
@@ -305,9 +339,9 @@ window.addEventListener(
 
         }
 
-    }
+    );
 
-);
+}
 
 
 /* =========================================
@@ -324,7 +358,11 @@ function initTimeline() {
 
         );
 
-    if (screens.length === 0) return;
+    if (screens.length === 0) {
+
+        return;
+
+    }
 
     const observer =
 
@@ -382,7 +420,9 @@ function initTimeline() {
 
         screen => {
 
-            observer.observe(screen);
+            observer.observe(
+                screen
+            );
 
         }
 
@@ -392,7 +432,7 @@ function initTimeline() {
 
 
 /* =========================================
-START
+KHỞI ĐỘNG
 ========================================= */
 
 document.addEventListener(
@@ -410,6 +450,16 @@ document.addEventListener(
         renderGallery();
 
         initTimeline();
+
+        initProgressBar();
+
+        window.scrollTo(
+
+            0,
+
+            0
+
+        );
 
     }
 

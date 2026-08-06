@@ -1,21 +1,8 @@
 /* =====================================================
-
 TIMELINE 80 NĂM BÁO QUÂN KHU 1
-
-Có thể sửa:
-
-- year: năm
-- title: tên giai đoạn
-- subtitle: tiêu đề phụ
-- description: đoạn giới thiệu
-- background: ảnh nền
-- images: ảnh tư liệu
-- side: left hoặc right
-- theme: old / middle / modern
-
 ===================================================== */
 
-const timeline = [
+window.timeline = [
 
     {
 
@@ -26,15 +13,15 @@ const timeline = [
         subtitle: "Khởi nguồn giữa núi rừng Việt Bắc",
 
         description:
-
             "Số báo đầu tiên ra đời giữa chiến khu Việt Bắc, trở thành tiếng nói của lực lượng vũ trang và nhân dân trong cuộc đấu tranh giành độc lập dân tộc.",
 
-        theme: "old",
+        color: "#d7b47d",
+
+        theme: "sepia",
 
         side: "left",
 
         background:
-
             "assets/timeline/1946-bg.jpg",
 
         images: [
@@ -56,15 +43,15 @@ const timeline = [
         subtitle: "Đồng hành cùng cuộc kháng chiến",
 
         description:
+            "Tờ báo phản ánh tinh thần chiến đấu của quân và dân Việt Bắc.",
 
-            "Tờ báo phản ánh tinh thần chiến đấu của quân và dân Việt Bắc, cổ vũ ý chí quyết chiến, quyết thắng.",
+        color: "#d7b47d",
 
-        theme: "old",
+        theme: "sepia",
 
         side: "right",
 
         background:
-
             "assets/timeline/1947-bg.jpg",
 
         images: [
@@ -84,15 +71,15 @@ const timeline = [
         subtitle: "Tiếp nối ngọn lửa cách mạng",
 
         description:
+            "Tiếp tục phản ánh khí thế kháng chiến trên chiến trường Việt Bắc.",
 
-            "Báo Bắc Sơn tiếp tục làm tốt nhiệm vụ tuyên truyền, phản ánh khí thế kháng chiến trên chiến trường Việt Bắc.",
+        color: "#d7b47d",
 
-        theme: "old",
+        theme: "sepia",
 
         side: "left",
 
         background:
-
             "assets/timeline/1950-bg.jpg",
 
         images: [
@@ -112,15 +99,15 @@ const timeline = [
         subtitle: "Xây dựng và bảo vệ Tổ quốc",
 
         description:
+            "Đồng hành cùng nhiệm vụ xây dựng lực lượng vũ trang.",
 
-            "Tờ báo bước vào thời kỳ mới, đồng hành cùng nhiệm vụ xây dựng lực lượng vũ trang và bảo vệ miền Bắc xã hội chủ nghĩa.",
+        color: "#d4af37",
 
-        theme: "middle",
+        theme: "classic",
 
         side: "right",
 
         background:
-
             "assets/timeline/1954-bg.jpg",
 
         images: [
@@ -140,15 +127,15 @@ const timeline = [
         subtitle: "Tiếng nói của lực lượng vũ trang",
 
         description:
+            "Phản ánh nhiệm vụ quân sự, quốc phòng trên địa bàn.",
 
-            "Báo Quân Việt Bắc trở thành diễn đàn quan trọng, phản ánh nhiệm vụ quân sự, quốc phòng trên địa bàn.",
+        color: "#d4af37",
 
-        theme: "middle",
+        theme: "classic",
 
         side: "left",
 
         background:
-
             "assets/timeline/1957-bg.jpg",
 
         images: [
@@ -168,15 +155,15 @@ const timeline = [
         subtitle: "Đồng hành cùng LLVT Quân khu",
 
         description:
+            "Phản ánh công tác huấn luyện, sẵn sàng chiến đấu.",
 
-            "Sau ngày đất nước thống nhất, tờ báo tiếp tục phản ánh công tác huấn luyện, sẵn sàng chiến đấu và phong trào thi đua Quyết thắng.",
+        color: "#d4af37",
 
-        theme: "middle",
+        theme: "classic",
 
         side: "right",
 
         background:
-
             "assets/timeline/1976-bg.jpg",
 
         images: [
@@ -195,18 +182,18 @@ const timeline = [
 
         title: "TỜ TIN QUÂN KHU 1",
 
-        subtitle: "Đổi mới nội dung, mở rộng bạn đọc",
+        subtitle: "Đổi mới nội dung",
 
         description:
+            "Đáp ứng yêu cầu tuyên truyền trong tình hình mới.",
 
-            "Nội dung và hình thức được đổi mới, đáp ứng yêu cầu tuyên truyền trong tình hình mới.",
+        color: "#d4af37",
 
-        theme: "middle",
+        theme: "classic",
 
         side: "left",
 
         background:
-
             "assets/timeline/1990-bg.jpg",
 
         images: [
@@ -223,18 +210,18 @@ const timeline = [
 
         title: "BÁO QUÂN KHU 1",
 
-        subtitle: "Khẳng định vị thế cơ quan báo chí",
+        subtitle: "Khẳng định vị thế",
 
         description:
+            "Từng bước hiện đại hóa nội dung và hình thức.",
 
-            "Báo Quân khu 1 từng bước hiện đại hóa, nâng cao chất lượng nội dung và hình thức trình bày.",
+        color: "#73c8ff",
 
         theme: "modern",
 
         side: "right",
 
         background:
-
             "assets/timeline/2000-bg.jpg",
 
         images: [
@@ -254,15 +241,15 @@ const timeline = [
         subtitle: "Báo chí trong thời đại số",
 
         description:
+            "Mở rộng sang báo điện tử, phim tài liệu và nền tảng trực tuyến.",
 
-            "Báo Quân khu 1 mở rộng sang báo điện tử, truyền hình, phim tài liệu và các nền tảng trực tuyến.",
+        color: "#73c8ff",
 
         theme: "modern",
 
         side: "left",
 
         background:
-
             "assets/timeline/2015-bg.jpg",
 
         images: [
@@ -284,15 +271,15 @@ const timeline = [
         subtitle: "80 năm xây dựng và phát triển",
 
         description:
+            "Cơ quan báo chí đa phương tiện của lực lượng vũ trang Quân khu 1.",
 
-            "Báo Quân khu 1 trở thành cơ quan báo chí đa phương tiện, phát triển mạnh mẽ trên báo in, báo điện tử và mạng xã hội.",
+        color: "#73c8ff",
 
         theme: "modern",
 
         side: "right",
 
         background:
-
             "assets/timeline/2026-bg.jpg",
 
         images: [

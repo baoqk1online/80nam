@@ -102,7 +102,7 @@ function renderSocial() {
 
 }
 /* =========================================
-   TIMELINE
+TIMELINE
 ========================================= */
 
 function renderTimeline() {
@@ -111,36 +111,25 @@ function renderTimeline() {
 
     timelineContainer.innerHTML = "";
 
-    (window.timeline || []).forEach(item => {
+    window.timeline.forEach(item => {
 
-        const section = document.createElement(
-            "section"
-        );
+        const section = document.createElement("section");
 
         section.className =
-            `timeline-screen ${item.theme}`;
+            `timeline-screen active ${item.theme}`;
 
         section.innerHTML = `
 
-            <div
-                class="background"
-                style="
-                    background-image:
-                    url('${item.background}')
-                "
-            ></div>
+            <div class="background"
+                 style="background-image:url('${item.background}')">
+            </div>
 
             <div class="timeline-dot"></div>
 
             <div class="timeline-card ${item.side}">
 
-                <div
-                    class="year"
-                    style="
-                        color:
-                        ${item.color || "#d4af37"}
-                    "
-                >
+                <div class="year"
+                     style="color:${item.color}">
 
                     ${item.year}
 
@@ -172,15 +161,12 @@ function renderTimeline() {
 
                             img =>
 
-                            `
-                            <img
-                                src="${img}"
-                                alt="${item.title}">
-                            `
+                            `<img src="${img}">`
 
                         )
 
                         .join("")
+
                     }
 
                 </div>
@@ -189,13 +175,13 @@ function renderTimeline() {
 
         `;
 
-        timelineContainer.appendChild(
-            section
-        );
+        timelineContainer.appendChild(section);
 
     });
 
 }
+
+renderTimeline();
 /* =========================================
    TRIỂN LÃM
 ========================================= */

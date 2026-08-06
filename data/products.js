@@ -8,11 +8,11 @@ window.products = [
 
         thumbnail:
 
-            "assets/products/newspaper.jpg",
+            "assets/products/baoin.jpg",
 
         url:
 
-            "https://baoqk1online.github.io/80nam/newspaper"
+            "http://docbao.baoquankhu1.vn/"
 
     },
 
@@ -24,11 +24,11 @@ window.products = [
 
         thumbnail:
 
-            "assets/products/documentary.jpg",
+            "assets/products/phim.jpg",
 
         url:
 
-            "https://youtube.com"
+            "https://baoquankhu1.vn/video/phong-su/chu-dong-chiem-linh-giu-vung-%E2%80%9Ctran-dia-so%E2%80%9D-6242-18.html"
 
     },
 
@@ -40,11 +40,11 @@ window.products = [
 
         thumbnail:
 
-            "assets/products/website.jpg",
+            "assets/products/website.png",
 
         url:
 
-            "https://baoqk1online.github.io/80nam"
+            "https://baoquankhu1.vn/"
 
     }
 

@@ -17,7 +17,7 @@ const social = [
 
         url: "https://www.facebook.com/baoquankhu1",
 
-        thumbnail: ""
+        thumbnail: "assets/products/facebook.png"
     },
 
     {
@@ -27,7 +27,7 @@ const social = [
 
         url: "https://www.youtube.com/@bao-truyenhinhquankhu1",
 
-        thumbnail: ""
+        thumbnail: "assets/products/youtube.png"
     },
 
     {
@@ -37,7 +37,7 @@ const social = [
 
         url: "https://www.tiktok.com/@baoquankhu1",
 
-        thumbnail: ""
+        thumbnail: "assets/products/tiktok.png"
     }
 
 ];

@@ -428,9 +428,15 @@ body {
     background: rgba(0,0,0,.75);
 
 }
-/* ============================= */
+/* ======================== */
 /* TIMELINE */
-/* ============================= */
+/* ======================== */
+
+#timeline {
+
+    position: relative;
+
+}
 
 .timeline-screen {
 
@@ -438,21 +444,17 @@ body {
 
     height: 100vh;
 
+    overflow: hidden;
+
     display: flex;
 
     align-items: center;
 
-    opacity: .25;
-
-    transition: 1s;
+    justify-content: center;
 
 }
 
-.timeline-screen.show {
-
-    opacity: 1;
-
-}
+/* nền */
 
 .background {
 
@@ -464,6 +466,14 @@ body {
 
     background-position: center;
 
+    transform: scale(1.1);
+
+    transition:
+
+        transform 1.2s ease,
+
+        opacity 1.2s ease;
+
 }
 
 .background::after {
@@ -474,25 +484,41 @@ body {
 
     inset: 0;
 
-    background: rgba(0,0,0,.55);
+    background:
+
+        linear-gradient(
+
+            rgba(0,0,0,0.45),
+
+            rgba(0,0,0,0.7)
+
+        );
 
 }
+
+/* đường timeline */
 
 .timeline-line {
 
     position: fixed;
 
-    left: 50%;
-
     top: 0;
 
     bottom: 0;
 
+    left: 50%;
+
     width: 4px;
 
-    background: rgba(255,255,255,.2);
+    transform: translateX(-50%);
+
+    background: rgba(255,255,255,0.15);
+
+    z-index: 100;
 
 }
+
+/* chấm */
 
 .timeline-dot {
 
@@ -504,29 +530,47 @@ body {
 
     transform: translate(-50%, -50%);
 
-    width: 24px;
+    width: 28px;
 
-    height: 24px;
+    height: 28px;
 
     border-radius: 50%;
 
     background: #d4af37;
 
+    box-shadow:
+
+        0 0 20px rgba(212,175,55,.8);
+
+    z-index: 120;
+
 }
+
+/* khối thông tin */
 
 .timeline-card {
 
     position: absolute;
 
-    width: 420px;
+    width: 460px;
 
-    padding: 32px;
+    padding: 36px;
 
-    backdrop-filter: blur(12px);
+    border-radius: 24px;
 
-    background: rgba(0,0,0,.45);
+    background: rgba(0,0,0,0.45);
 
-    border-radius: 20px;
+    backdrop-filter: blur(16px);
+
+    opacity: 0;
+
+    transform: translateY(60px);
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
 
 }
 
@@ -542,9 +586,27 @@ body {
 
 }
 
+/* khi hiện */
+
+.timeline-screen.active .timeline-card {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+.timeline-screen.active .background {
+
+    transform: scale(1);
+
+}
+
 .year {
 
-    font-size: 56px;
+    font-size: 72px;
+
+    font-weight: 700;
 
     color: #d4af37;
 
@@ -554,46 +616,25 @@ body {
 
     margin-top: 12px;
 
+    font-size: 38px;
+
 }
 
 .timeline-card h3 {
 
     margin-top: 10px;
 
-    opacity: .8;
+    font-size: 20px;
+
+    opacity: .85;
 
 }
 
 .timeline-card p {
 
-    margin-top: 20px;
+    margin-top: 24px;
 
     line-height: 1.8;
-
-}
-.timeline-gallery {
-
-    margin-top: 20px;
-
-    display: grid;
-
-    grid-template-columns:
-
-        repeat(3, 1fr);
-
-    gap: 10px;
-
-}
-
-.timeline-gallery img {
-
-    width: 100%;
-
-    aspect-ratio: 4 / 3;
-
-    object-fit: cover;
-
-    border-radius: 8px;
 
 }
 /* ============================= */

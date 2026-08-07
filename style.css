@@ -464,37 +464,60 @@ GALLERY
 }
 
 #gallery-container {
+
     margin-top: 70px;
 
-    display: grid;
+    column-count: 3;
 
-    grid-template-columns:
+    column-gap: 20px;
 
-        repeat(3, 1fr);
-
-    gap: 20px;
 }
 
 .gallery-card {
+
+    display: inline-block;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
     overflow: hidden;
+
     border-radius: 18px;
+
+    break-inside: avoid;
+
     background: #181c25;
-    transition: .3s;
-}
-
-.gallery-card:hover {
-
-    transform: translateY(-8px);
 
 }
 
 .gallery-card img {
+
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+
+    height: auto;
+
+    display: block;
+
 }
 
+.gallery-card.vertical {
 
+    aspect-ratio: 3 / 4;
+
+}
+
+.gallery-card.horizontal {
+
+    aspect-ratio: 16 / 9;
+
+}
+
+.gallery-card.square {
+
+    aspect-ratio: 1 / 1;
+
+}
 /* ==========================
 FOOTER
 ========================== */

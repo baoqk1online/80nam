@@ -1,268 +1,1054 @@
 <!DOCTYPE html>
-
 <html lang="vi">
-
 <head>
-
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
     >
 
-    <title>
+    <title>80 năm Báo Quân khu 1 | 1946–2026</title>
 
-        80 năm Báo Quân khu 1 (1946–2026)
+    <meta
+        name="description"
+        content="Chuyên trang kỷ niệm 80 năm Báo Quân khu 1 (1946–2026), tái hiện hành trình hình thành, xây dựng, phát triển và chuyển mình trong kỷ nguyên số."
+    >
 
-    </title>
+    <meta
+        name="keywords"
+        content="Báo Quân khu 1, 80 năm Báo Quân khu 1, Quân khu 1, 1946 2026, báo chí quân đội"
+    >
+
+    <meta name="author" content="Báo Quân khu 1">
+    <meta name="robots" content="index, follow">
+
+    <meta name="theme-color" content="#0b1712">
 
     <link
-        rel="stylesheet"
-        href="style.css"
+        rel="canonical"
+        href="https://baoqk1online.github.io/80nam/"
     >
 
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+
+    <meta
+        property="og:title"
+        content="80 năm Báo Quân khu 1 | 1946–2026"
+    >
+
+    <meta
+        property="og:description"
+        content="Hành trình 80 năm xây dựng và phát triển của Báo Quân khu 1, từ những số báo đầu tiên giữa chiến khu Việt Bắc đến báo chí đa phương tiện trong kỷ nguyên số."
+    >
+
+    <meta
+        property="og:url"
+        content="https://baoqk1online.github.io/80nam/"
+    >
+
+    <meta
+        property="og:image"
+        content="https://baoqk1online.github.io/80nam/assets/meta/social-cover.webp"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="80 năm Báo Quân khu 1, 1946–2026"
+    >
+
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="80 năm Báo Quân khu 1">
+
+    <!-- Twitter / các nền tảng hỗ trợ Card -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="80 năm Báo Quân khu 1 | 1946–2026"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Hành trình 80 năm xây dựng và phát triển của Báo Quân khu 1."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://baoqk1online.github.io/80nam/assets/meta/social-cover.webp"
+    >
+
+    <!-- Ưu tiên tải ảnh Hero -->
+    <link
+        rel="preload"
+        as="image"
+        href="assets/hero/bg.webp"
+        type="image/webp"
+        fetchpriority="high"
+    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- THANH TIẾN TRÌNH -->
+    <!-- =========================================================
+         SKIP LINK
+         Hỗ trợ người dùng bàn phím bỏ qua điều hướng.
+    ========================================================== -->
 
-    <div id="progress-bar"></div>
+    <a class="skip-link" href="#main-content">
+        Chuyển đến nội dung chính
+    </a>
 
 
-    <!-- MENU -->
+    <!-- =========================================================
+         THANH TIẾN TRÌNH TOÀN TRANG
+         JavaScript chỉ cập nhật chiều dài thanh progress.
+    ========================================================== -->
 
-    <header class="header">
+    <div
+        class="page-progress"
+        aria-hidden="true"
+    >
+        <div
+            class="page-progress__bar"
+            id="page-progress-bar"
+        ></div>
+    </div>
 
-        <div class="logo">
 
-            80 NĂM BÁO QUÂN KHU 1
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header
+        class="site-header"
+        id="site-header"
+    >
+        <div class="site-header__inner">
+
+            <a
+                class="site-brand"
+                href="#hero"
+                aria-label="Về đầu chuyên trang 80 năm Báo Quân khu 1"
+            >
+                <span class="site-brand__mark" aria-hidden="true">
+                    80
+                </span>
+
+                <span class="site-brand__text">
+                    Báo Quân khu 1
+                </span>
+            </a>
+
+
+            <!-- Điều hướng desktop -->
+
+            <nav
+                class="site-nav site-nav--desktop"
+                aria-label="Điều hướng chính"
+            >
+                <a href="#products">
+                    Sản phẩm
+                </a>
+
+                <a href="#timeline">
+                    Hành trình 80 năm
+                </a>
+
+                <a href="#gallery">
+                    Triển lãm ảnh
+                </a>
+            </nav>
+
+
+            <!-- Nút menu mobile -->
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Mở menu"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+            >
+                <span
+                    class="menu-toggle__icon"
+                    aria-hidden="true"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
 
         </div>
 
-        <nav id="main-nav">
 
-            <a href="#products">
+        <!-- Menu mobile -->
 
-                Sản phẩm
+        <nav
+            class="mobile-menu"
+            id="mobile-menu"
+            aria-label="Điều hướng trên điện thoại"
+            hidden
+        >
+            <div class="mobile-menu__inner">
 
-            </a>
+                <a href="#products">
+                    Sản phẩm
+                </a>
 
-            <a href="#timeline">
+                <a href="#timeline">
+                    Hành trình 80 năm
+                </a>
 
-                Lịch sử
+                <a href="#gallery">
+                    Triển lãm ảnh
+                </a>
 
-            </a>
-
-            <a href="#gallery">
-
-                Triển lãm
-
-            </a>
-
+            </div>
         </nav>
 
     </header>
 
 
-    <!-- HERO -->
+    <!-- =========================================================
+         NỘI DUNG CHÍNH
+    ========================================================== -->
 
-    <section id="hero">
+    <main id="main-content">
 
-        <div id="hero-container">
 
-            <div class="hero-bg"></div>
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
-            <div class="hero-content">
+        <section
+            class="hero"
+            id="hero"
+            aria-labelledby="hero-title"
+        >
 
-                <div class="hero-number">
+            <div
+                class="hero__media"
+                aria-hidden="true"
+            >
+                <img
+                    class="hero__image"
+                    src="assets/hero/bg.webp"
+                    alt=""
+                    fetchpriority="high"
+                    decoding="sync"
+                >
 
-                    80
+                <div class="hero__overlay"></div>
+            </div>
 
-                </div>
 
-                <h1>
+            <div class="hero__content">
 
-                    BÁO QUÂN KHU 1
+                <p class="hero__eyebrow">
+                    1946 — 2026
+                </p>
 
+                <h1
+                    class="hero__title"
+                    id="hero-title"
+                >
+                    <span class="hero__number">
+                        80 NĂM
+                    </span>
+
+                    <span class="hero__name">
+                        BÁO QUÂN KHU 1
+                    </span>
                 </h1>
 
-                <h2>
-
-                    1946 – 2026
-
-                </h2>
-
-                <p>
-
-                    Từ tờ báo "Chiến khu" đến cơ quan báo chí
-                    đa phương tiện của lực lượng vũ trang
-                    Quân khu 1.
-
+                <p class="hero__intro">
+                    Từ những số báo đầu tiên giữa chiến khu Việt Bắc
+                    đến báo chí đa phương tiện trong kỷ nguyên số.
                 </p>
 
                 <a
-                    class="hero-button"
+                    class="hero__discover"
                     href="#products"
                 >
+                    <span>Khám phá hành trình</span>
 
-                    Khám phá
-
+                    <span
+                        class="hero__discover-arrow"
+                        aria-hidden="true"
+                    >
+                        ↓
+                    </span>
                 </a>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- SẢN PHẨM -->
+        <!-- =====================================================
+             SẢN PHẨM KỶ NIỆM
+        ====================================================== -->
 
-    <section id="products">
+        <section
+            class="section products-section"
+            id="products"
+            aria-labelledby="products-title"
+        >
 
-        <div class="section-title">
+            <div class="section-shell">
 
-            SẢN PHẨM KỶ NIỆM
+                <header class="section-heading">
 
-        </div>
+                    <p class="section-heading__eyebrow">
+                        Dấu ấn 80 năm
+                    </p>
 
-        <div class="section-subtitle">
+                    <h2
+                        class="section-heading__title"
+                        id="products-title"
+                    >
+                        Sản phẩm kỷ niệm
+                    </h2>
 
-            Báo in, phim tài liệu và chuyên trang điện tử
+                    <p class="section-heading__description">
+                        Những sản phẩm báo chí và truyền thông
+                        đánh dấu chặng đường 80 năm xây dựng,
+                        phát triển của Báo Quân khu 1.
+                    </p>
 
-        </div>
-
-        <div id="products-container">
-
-            <!-- script.js -->
-
-        </div>
-
-
-        <div class="social-title-main">
-
-            HỆ SINH THÁI ĐA NỀN TẢNG
-
-        </div>
-
-        <div id="social-container">
-
-            <!-- script.js -->
-
-        </div>
-
-    </section>
+                </header>
 
 
-    <!-- TIMELINE -->
+                <!--
+                    JavaScript render đúng 3 sản phẩm:
+                    - Báo in 3:4
+                    - Phim 16:9
+                    - Website 16:9
+                -->
 
-    <section id="timeline">
+                <div
+                    class="products-grid"
+                    id="products-container"
+                ></div>
 
-        <div class="section-title">
+            </div>
 
-            HÀNH TRÌNH 80 NĂM
-
-        </div>
-
-        <div class="section-subtitle">
-
-            Từ tờ báo Chiến khu đến cơ quan báo chí đa phương tiện
-
-        </div>
-
-        <div class="timeline-line"></div>
-
-        <div id="timeline-container">
-
-            <!-- script.js -->
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- TRIỂN LÃM -->
+        <!-- =====================================================
+             MẠNG XÃ HỘI
+        ====================================================== -->
 
-    <section id="gallery">
+        <section
+            class="section social-section"
+            id="social"
+            aria-labelledby="social-title"
+        >
 
-        <div class="section-title">
+            <div class="section-shell">
 
-            TRIỂN LÃM ẢNH
+                <header class="section-heading section-heading--compact">
 
-        </div>
+                    <p class="section-heading__eyebrow">
+                        Kết nối
+                    </p>
 
-        <div class="section-subtitle">
+                    <h2
+                        class="section-heading__title"
+                        id="social-title"
+                    >
+                        Báo Quân khu 1 trên mạng xã hội
+                    </h2>
 
-            Những dấu ấn trong hành trình 80 năm
+                    <p class="section-heading__description">
+                        Theo dõi các nền tảng chính thức của
+                        Báo Quân khu 1.
+                    </p>
 
-        </div>
-
-        <div id="gallery-container">
-
-            <!-- script.js -->
-
-        </div>
-
-    </section>
+                </header>
 
 
-    <!-- FOOTER -->
+                <!--
+                    Luôn đúng 3 card:
+                    Facebook | YouTube | TikTok
 
-    <footer>
+                    Mobile vẫn giữ 3 cột.
+                -->
 
-        <div class="footer-number">
+                <div
+                    class="social-grid"
+                    id="social-container"
+                ></div>
 
-            80
+            </div>
 
-        </div>
+        </section>
 
-        <div class="footer-title">
 
-            BÁO QUÂN KHU 1
+        <!-- =====================================================
+             TIMELINE
+        ====================================================== -->
 
-        </div>
+        <section
+            class="timeline-section"
+            id="timeline"
+            aria-labelledby="timeline-title"
+        >
 
-        <div class="footer-year">
+            <header class="timeline-intro">
 
-            1946 – 2026
+                <div class="section-shell">
 
-        </div>
+                    <p class="section-heading__eyebrow">
+                        1946 — 2026
+                    </p>
 
-        <div class="footer-text">
+                    <h2
+                        class="section-heading__title"
+                        id="timeline-title"
+                    >
+                        Hành trình 80 năm
+                    </h2>
 
-            Kỷ niệm 80 năm ra số báo đầu tiên
+                    <p class="section-heading__description">
+                        Những dấu mốc trên hành trình xây dựng,
+                        trưởng thành và phát triển của
+                        Báo Quân khu 1.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <div class="timeline">
+
+                <!-- Trục Timeline -->
+
+                <div
+                    class="timeline__rail"
+                    aria-hidden="true"
+                >
+                    <div class="timeline__rail-line"></div>
+
+                    <div
+                        class="timeline__rail-progress"
+                        id="timeline-progress"
+                    ></div>
+                </div>
+
+
+                <!--
+                    JavaScript render toàn bộ các mốc lịch sử.
+
+                    Mỗi item sẽ có ID:
+                    timeline-1946
+                    timeline-1947
+                    ...
+                -->
+
+                <div
+                    class="timeline__items"
+                    id="timeline-container"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             GALLERY
+        ====================================================== -->
+
+        <section
+            class="section gallery-section"
+            id="gallery"
+            aria-labelledby="gallery-title"
+        >
+
+            <div class="section-shell">
+
+                <header class="section-heading">
+
+                    <p class="section-heading__eyebrow">
+                        Khoảnh khắc
+                    </p>
+
+                    <h2
+                        class="section-heading__title"
+                        id="gallery-title"
+                    >
+                        Triển lãm ảnh
+                    </h2>
+
+                    <p class="section-heading__description">
+                        Những hình ảnh ghi lại các dấu ấn,
+                        hoạt động và khoảnh khắc trong hành trình
+                        của Báo Quân khu 1.
+                    </p>
+
+                </header>
+
+
+                <!--
+                    Ảnh Gallery:
+                    - giữ tỷ lệ tự nhiên
+                    - masonry
+                    - lazy load
+                    - bấm để mở Viewer
+                -->
+
+                <div
+                    class="gallery-grid"
+                    id="gallery-container"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer
+        class="site-footer"
+        id="footer"
+    >
+
+        <div class="site-footer__inner">
+
+            <div
+                class="site-footer__number"
+                aria-hidden="true"
+            >
+                80
+            </div>
+
+            <div class="site-footer__content">
+
+                <p class="site-footer__period">
+                    1946 — 2026
+                </p>
+
+                <p class="site-footer__name">
+                    BÁO QUÂN KHU 1
+                </p>
+
+                <p class="site-footer__message">
+                    80 năm xây dựng, trưởng thành và phát triển
+                </p>
+
+            </div>
 
         </div>
 
     </footer>
 
 
-    <!-- NÚT LÊN ĐẦU TRANG -->
+    <!-- =========================================================
+         BACK TO TOP
+    ========================================================== -->
 
-    <button id="back-to-top">
-
-        ↑
-
+    <button
+        class="back-to-top"
+        id="back-to-top"
+        type="button"
+        aria-label="Trở về đầu trang"
+        title="Trở về đầu trang"
+        hidden
+    >
+        <span aria-hidden="true">↑</span>
     </button>
 
 
-    <!-- DỮ LIỆU -->
+    <!-- =========================================================
+         GALLERY VIEWER
+         Native <dialog>
+
+         - Không click backdrop để đóng.
+         - X đóng.
+         - Esc đóng.
+         - ← / → chuyển ảnh trên desktop.
+         - Nút trước / sau.
+         - Có chỉ số ảnh.
+         - Có caption + credit.
+    ========================================================== -->
+
+    <dialog
+        class="gallery-viewer"
+        id="gallery-viewer"
+        aria-labelledby="gallery-viewer-title"
+        aria-describedby="gallery-viewer-caption"
+    >
+
+        <div class="gallery-viewer__shell">
+
+            <h2
+                class="sr-only"
+                id="gallery-viewer-title"
+            >
+                Xem ảnh triển lãm
+            </h2>
+
+
+            <!-- Nút đóng -->
+
+            <button
+                class="gallery-viewer__close"
+                id="gallery-viewer-close"
+                type="button"
+                aria-label="Đóng ảnh"
+                title="Đóng"
+            >
+                <span aria-hidden="true">×</span>
+            </button>
+
+
+            <!-- Vùng ảnh -->
+
+            <div class="gallery-viewer__stage">
+
+                <!-- Ảnh trước -->
+
+                <button
+                    class="gallery-viewer__nav gallery-viewer__nav--prev"
+                    id="gallery-viewer-prev"
+                    type="button"
+                    aria-label="Xem ảnh trước"
+                    title="Ảnh trước"
+                >
+                    <span aria-hidden="true">‹</span>
+                </button>
+
+
+                <figure class="gallery-viewer__figure">
+
+                    <div class="gallery-viewer__image-wrap">
+
+                        <img
+                            class="gallery-viewer__image"
+                            id="gallery-viewer-image"
+                            src=""
+                            alt=""
+                            decoding="async"
+                        >
+
+                    </div>
+
+
+                    <!-- Chỉ số ảnh -->
+
+                    <div
+                        class="gallery-viewer__counter"
+                        id="gallery-viewer-counter"
+                        aria-live="polite"
+                    >
+                        1 / 1
+                    </div>
+
+
+                    <!-- Caption + credit -->
+
+                    <figcaption class="gallery-viewer__info">
+
+                        <p
+                            class="gallery-viewer__caption"
+                            id="gallery-viewer-caption"
+                        ></p>
+
+                        <p
+                            class="gallery-viewer__credit"
+                            id="gallery-viewer-credit"
+                        ></p>
+
+                    </figcaption>
+
+                </figure>
+
+
+                <!-- Ảnh sau -->
+
+                <button
+                    class="gallery-viewer__nav gallery-viewer__nav--next"
+                    id="gallery-viewer-next"
+                    type="button"
+                    aria-label="Xem ảnh tiếp theo"
+                    title="Ảnh tiếp theo"
+                >
+                    <span aria-hidden="true">›</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </dialog>
+
+
+    <!-- =========================================================
+         TEMPLATE: PRODUCT
+    ========================================================== -->
+
+    <template id="product-template">
+
+        <a
+            class="product-card"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="product-card__media">
+
+                <img
+                    class="product-card__image"
+                    src=""
+                    alt=""
+                    decoding="async"
+                >
+
+            </div>
+
+
+            <div class="product-card__content">
+
+                <h3 class="product-card__title"></h3>
+
+                <p class="product-card__subtitle"></p>
+
+                <span
+                    class="product-card__link-indicator"
+                    aria-hidden="true"
+                >
+                    ↗
+                </span>
+
+            </div>
+
+        </a>
+
+    </template>
+
+
+    <!-- =========================================================
+         TEMPLATE: SOCIAL
+    ========================================================== -->
+
+    <template id="social-template">
+
+        <a
+            class="social-card"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="social-card__media">
+
+                <img
+                    class="social-card__image"
+                    src=""
+                    alt=""
+                    decoding="async"
+                    width="600"
+                    height="600"
+                >
+
+            </div>
+
+
+            <div class="social-card__content">
+
+                <h3 class="social-card__title"></h3>
+
+                <span
+                    class="social-card__link-indicator"
+                    aria-hidden="true"
+                >
+                    ↗
+                </span>
+
+            </div>
+
+        </a>
+
+    </template>
+
+
+    <!-- =========================================================
+         TEMPLATE: TIMELINE ITEM
+
+         Cấu trúc này không thay đổi khi:
+         - không có ảnh
+         - có 1 ảnh
+         - có 2 ảnh
+         - có nhiều ảnh
+    ========================================================== -->
+
+    <template id="timeline-template">
+
+        <article class="timeline-item">
+
+            <!-- Background -->
+
+            <div
+                class="timeline-item__background"
+                aria-hidden="true"
+            >
+
+                <img
+                    class="timeline-item__background-image"
+                    src=""
+                    alt=""
+                    decoding="async"
+                >
+
+                <div class="timeline-item__background-overlay"></div>
+
+            </div>
+
+
+            <!-- Điểm mốc trên trục -->
+
+            <div
+                class="timeline-item__marker"
+                aria-hidden="true"
+            >
+                <span class="timeline-item__marker-dot"></span>
+            </div>
+
+
+            <!-- Nội dung -->
+
+            <div class="timeline-item__inner">
+
+                <div class="timeline-item__content">
+
+                    <p class="timeline-item__year"></p>
+
+                    <h3 class="timeline-item__title"></h3>
+
+                    <p class="timeline-item__subtitle"></p>
+
+                    <p class="timeline-item__description"></p>
+
+
+                    <!-- =========================================
+                         TIMELINE MEDIA
+
+                         Nếu không có ảnh:
+                         JS giữ hidden.
+
+                         Nếu có ảnh:
+                         JS render các timeline-image-template.
+
+                         Dải này hỗ trợ:
+                         - kéo / vuốt ngang tự nhiên
+                         - nút trái / phải
+                    ========================================== -->
+
+                    <div
+                        class="timeline-media"
+                        hidden
+                    >
+
+                        <div class="timeline-media__header">
+
+                            <span class="timeline-media__label">
+                                Tư liệu
+                            </span>
+
+
+                            <div
+                                class="timeline-media__controls"
+                                aria-label="Điều khiển ảnh tư liệu"
+                            >
+
+                                <button
+                                    class="timeline-media__control timeline-media__control--prev"
+                                    type="button"
+                                    aria-label="Xem ảnh tư liệu phía trước"
+                                    title="Ảnh trước"
+                                >
+                                    <span aria-hidden="true">‹</span>
+                                </button>
+
+
+                                <button
+                                    class="timeline-media__control timeline-media__control--next"
+                                    type="button"
+                                    aria-label="Xem ảnh tư liệu tiếp theo"
+                                    title="Ảnh tiếp theo"
+                                >
+                                    <span aria-hidden="true">›</span>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="timeline-media__viewport"
+                            tabindex="0"
+                            aria-label="Dải ảnh tư liệu"
+                        >
+
+                            <div class="timeline-media__track"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </template>
+
+
+    <!-- =========================================================
+         TEMPLATE: TIMELINE IMAGE
+    ========================================================== -->
+
+    <template id="timeline-image-template">
+
+        <figure class="timeline-photo">
+
+            <div class="timeline-photo__media">
+
+                <img
+                    class="timeline-photo__image"
+                    src=""
+                    alt=""
+                    decoding="async"
+                >
+
+            </div>
+
+
+            <figcaption class="timeline-photo__info">
+
+                <p class="timeline-photo__caption"></p>
+
+                <p class="timeline-photo__credit"></p>
+
+            </figcaption>
+
+        </figure>
+
+    </template>
+
+
+    <!-- =========================================================
+         TEMPLATE: GALLERY ITEM
+
+         Đây là khu vực duy nhất sử dụng loading="lazy".
+    ========================================================== -->
+
+    <template id="gallery-template">
+
+        <figure class="gallery-item">
+
+            <button
+                class="gallery-item__button"
+                type="button"
+                aria-label="Xem ảnh lớn"
+            >
+
+                <img
+                    class="gallery-item__image"
+                    src=""
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                >
+
+
+                <span
+                    class="gallery-item__overlay"
+                    aria-hidden="true"
+                >
+                    <span class="gallery-item__view-icon">
+                        ⤢
+                    </span>
+                </span>
+
+            </button>
+
+
+            <!--
+                Caption ngắn dưới thumbnail.
+                CSS có thể lựa chọn mức hiển thị phù hợp.
+
+                Viewer vẫn luôn có caption + credit đầy đủ.
+            -->
+
+            <figcaption class="gallery-item__info">
+
+                <p class="gallery-item__caption"></p>
+
+                <p class="gallery-item__credit"></p>
+
+            </figcaption>
+
+        </figure>
+
+    </template>
+
+
+    <!-- =========================================================
+         NOSCRIPT
+    ========================================================== -->
+
+    <noscript>
+
+        <div class="noscript-message">
+
+            <strong>
+                JavaScript đang bị tắt.
+            </strong>
+
+            <p>
+                Chuyên trang cần JavaScript để hiển thị đầy đủ
+                Timeline, sản phẩm, mạng xã hội và triển lãm ảnh.
+            </p>
+
+        </div>
+
+    </noscript>
+
+
+    <!-- =========================================================
+         DATA
+         Các file chỉ chứa nội dung.
+    ========================================================== -->
 
     <script src="data/products.js"></script>
-
     <script src="data/social.js"></script>
-
     <script src="data/timeline.js"></script>
-
     <script src="data/gallery.js"></script>
 
 
-    <!-- XỬ LÝ -->
+    <!-- =========================================================
+         CORE JAVASCRIPT
+    ========================================================== -->
 
     <script src="script.js"></script>
 
 </body>
-
 </html>

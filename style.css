@@ -421,7 +421,7 @@ footer {
     min-width: 0;
 
     display: inline-flex;
-    align-items: flex-end;
+    align-items: baseline;
     gap: 10px;
 
     font-weight: 800;

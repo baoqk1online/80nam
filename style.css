@@ -356,7 +356,7 @@ footer {
 .site-header {
     position: fixed;
     inset:
-        3px
+        0px
         0
         auto
         0;
@@ -443,7 +443,9 @@ footer {
     overflow: hidden;
 
     font-size: 0.86rem;
-
+    line-height: 1.25;
+    padding-block: 2px;
+   
     letter-spacing: 0.04em;
     text-transform: uppercase;
 

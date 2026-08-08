@@ -1,297 +1,330 @@
-/* =====================================================
-TIMELINE 80 NĂM BÁO QUÂN KHU 1
-===================================================== */
+"use strict";
 
-window.timeline = [
+/* ============================================================
+   80 NĂM BÁO QUÂN KHU 1
+   DATA / TIMELINE.JS
+
+   10 mốc chính:
+   1946
+   1947
+   1950
+   1954
+   1957
+   1976
+   1992
+   2005
+   2019
+   2026
+
+   QUY ƯỚC ẢNH:
+
+   Background:
+   assets/timeline/1946-bg.webp
+
+   Ảnh tư liệu:
+   assets/timeline/1946-01.webp
+   assets/timeline/1946-02.webp
+   assets/timeline/1946-03.webp
+   ...
+
+   Khi chưa có ảnh:
+   - background.image để rỗng
+   background: {
+    image: "assets/timeline/1946-bg.webp",
+    position: "50% 50%"
+    }
+   - images để []
+    images: [
+        {
+            image: "assets/timeline/1946-01.webp",
+            caption: "Chú thích ảnh.",
+            credit: "Nguồn: Tư liệu Báo Quân khu 1"
+        },
+    
+        {
+            image: "assets/timeline/1946-02.webp",
+            caption: "Chú thích ảnh thứ hai.",
+            credit: "Ảnh: Nguyễn Văn A"
+        }
+    ]
+   Khi bổ sung ảnh:
+   - Không sửa HTML
+   - Không sửa CSS
+   - Không sửa script.js
+   - Chỉ thêm file WebP và cập nhật dữ liệu tại đây
+============================================================ */
+
+window.SiteData = window.SiteData || {};
+
+window.SiteData.timeline = [
+
+    /* ========================================================
+       1946
+    ======================================================== */
 
     {
-
         year: "1946",
 
         title: "CHIẾN KHU",
 
-        subtitle: "Khởi nguồn giữa núi rừng Việt Bắc",
+        subtitle: "Khởi nguồn từ chiến khu cách mạng",
 
         description:
-
-            "Số báo đầu tiên ra đời tại chiến khu Việt Bắc, trở thành tiếng nói của lực lượng vũ trang và nhân dân trong cuộc đấu tranh giành độc lập dân tộc.",
-
-        color: "#d7b47d",
+            "Ngày 19/8/1946, số đầu tiên của Báo Chiến khu ra đời, đặt nền móng cho Báo Quân khu 1 ngày nay. Đồng chí Tạ Xuân Thu, Chính trị ủy viên Chiến khu, làm Chủ nhiệm; đồng chí Lý Anh Đồng, tức Kỳ Ân, làm Chủ bút. Trong điều kiện còn nhiều khó khăn, cán bộ tòa soạn trực tiếp đi cơ sở khai thác tư liệu, tổ chức tin, bài và đưa bản thảo về Nhà in Hàn Thuyên, Hà Nội để in số báo đầu tiên.",
 
         theme: "sepia",
 
         side: "left",
 
-        background: "assets/timeline/1946-bg.jpg",
+        background: {
+            image: "",
+            position: "50% 50%"
+        },
 
-        images: [
-
-            "assets/timeline/1946-1.jpg",
-
-            "assets/timeline/1946-2.jpg"
-
-        ]
-
+        images: []
     },
 
-    {
 
+    /* ========================================================
+       1947
+    ======================================================== */
+
+    {
         year: "1947",
 
         title: "VIỆT BẮC QUYẾT CHIẾN",
 
-        subtitle: "Đồng hành cùng cuộc kháng chiến",
+        subtitle: "Tiếng gọi quyết chiến giữa Việt Bắc",
 
         description:
-
-            "Tờ báo phản ánh tinh thần chiến đấu, ý chí quyết chiến quyết thắng của quân và dân Việt Bắc trong những năm đầu kháng chiến chống thực dân Pháp.",
-
-        color: "#d7b47d",
+            "Trong cuộc tiến công Việt Bắc Thu - Đông năm 1947 của thực dân Pháp, Báo Chiến khu được đổi tên thành Việt Bắc Quyết chiến. Tên gọi mới thể hiện ý chí và quyết tâm của quân, dân các dân tộc Việt Bắc, góp phần cổ vũ tinh thần chiến đấu, bảo vệ An toàn khu và cơ quan đầu não của cuộc kháng chiến.",
 
         theme: "sepia",
 
         side: "right",
 
-        background: "assets/timeline/1947-bg.jpg",
+        background: {
+            image: "",
+            position: "50% 50%"
+        },
 
-        images: [
-
-            "assets/timeline/1947-1.jpg"
-
-        ]
-
+        images: []
     },
 
-    {
 
+    /* ========================================================
+       1950
+    ======================================================== */
+
+    {
         year: "1950",
 
         title: "BẮC SƠN",
 
-        subtitle: "Tiếp nối ngọn lửa cách mạng",
+        subtitle: "Tiếp nối truyền thống quật cường",
 
         description:
-
-            "Tiếp tục phản ánh khí thế chiến đấu của quân và dân trên chiến trường Việt Bắc, cổ vũ phong trào thi đua yêu nước.",
-
-        color: "#d7b47d",
+            "Trong Chiến dịch Biên giới năm 1950, diễn ra từ ngày 16/9 đến 14/10, Việt Bắc Quyết chiến được đổi tên thành Bắc Sơn. Tên gọi mới khơi dậy truyền thống yêu nước, tinh thần quật cường của Khởi nghĩa Bắc Sơn và tiếp tục đồng hành với quân, dân Việt Bắc trong cuộc kháng chiến chống thực dân Pháp.",
 
         theme: "sepia",
 
         side: "left",
 
-        background: "assets/timeline/1950-bg.jpg",
+        background: {
+            image: "",
+            position: "50% 50%"
+        },
 
-        images: [
-
-            "assets/timeline/1950-1.jpg"
-
-        ]
-
+        images: []
     },
 
-    {
 
+    /* ========================================================
+       1954
+    ======================================================== */
+
+    {
         year: "1954",
 
         title: "GIỮ NƯỚC",
 
-        subtitle: "Xây dựng và bảo vệ Tổ quốc",
+        subtitle: "Tất cả hướng về Điện Biên Phủ",
 
         description:
-
-            "Đồng hành cùng nhiệm vụ xây dựng lực lượng vũ trang và bảo vệ miền Bắc xã hội chủ nghĩa.",
-
-        color: "#d4af37",
+            "Trong Chiến cuộc Đông Xuân 1953 - 1954, khi cả nước hướng về chiến trường Điện Biên Phủ, Báo Bắc Sơn được đổi tên thành Giữ Nước. Tờ báo tập trung tuyên truyền, cổ vũ quân và dân Việt Bắc thực hiện nhiệm vụ chi viện tiền tuyến, góp sức cùng cả nước làm nên thắng lợi của cuộc kháng chiến chống thực dân Pháp.",
 
         theme: "classic",
 
         side: "right",
 
-        background: "assets/timeline/1954-bg.jpg",
+        background: {
+            image: "",
+            position: "50% 50%"
+        },
 
-        images: [
-
-            "assets/timeline/1954-1.jpg"
-
-        ]
-
+        images: []
     },
 
-    {
 
+    /* ========================================================
+       1957
+    ======================================================== */
+
+    {
         year: "1957",
 
         title: "QUÂN VIỆT BẮC",
 
-        subtitle: "Tiếng nói của lực lượng vũ trang",
+        subtitle: "Tiếng nói của lực lượng vũ trang Việt Bắc",
 
         description:
-
-            "Phản ánh toàn diện nhiệm vụ quân sự, quốc phòng và hoạt động của lực lượng vũ trang trên địa bàn Quân khu.",
-
-        color: "#d4af37",
+            "Ngày 3/6/1957, Quân khu Việt Bắc được thành lập. Để thực hiện chức năng là cơ quan của Đảng ủy và Bộ Tư lệnh Quân khu Việt Bắc, Báo Giữ Nước được đổi tên thành Quân Việt Bắc. Trong những năm chiến tranh, các thế hệ phóng viên, biên tập viên bám sát chiến trường và hậu phương, phản ánh sinh động cuộc chiến đấu, lao động và sản xuất của quân, dân Việt Bắc.",
 
         theme: "classic",
 
         side: "left",
 
-        background: "assets/timeline/1957-bg.jpg",
+        background: {
+            image: "",
+            position: "50% 50%"
+        },
 
-        images: [
-
-            "assets/timeline/1957-1.jpg"
-
-        ]
-
+        images: []
     },
 
-    {
 
+    /* ========================================================
+       1976
+    ======================================================== */
+
+    {
         year: "1976",
 
         title: "CHIẾN SĨ QUÂN KHU 1",
 
-        subtitle: "Đồng hành cùng lực lượng vũ trang",
+        subtitle: "Đồng hành cùng Quân khu trong nhiệm vụ mới",
 
         description:
-
-            "Tuyên truyền nhiệm vụ huấn luyện, sẵn sàng chiến đấu và xây dựng lực lượng vũ trang Quân khu trong thời kỳ mới.",
-
-        color: "#d4af37",
+            "Ngày 29/5/1976, Quân khu 1 được thành lập trên cơ sở sáp nhập Quân khu Việt Bắc và Quân khu Tây Bắc; Báo Quân Việt Bắc được đổi tên thành Chiến sĩ Quân khu 1. Sau khi tổ chức, địa bàn Quân khu tiếp tục được điều chỉnh năm 1978, tờ báo mang tên Báo Quân khu 1. Trong những năm chiến đấu bảo vệ biên giới phía Bắc, đội ngũ phóng viên của Báo bám sát trận địa, trở thành lực lượng xung kích trên mặt trận tuyên truyền.",
 
         theme: "classic",
 
         side: "right",
 
-        background: "assets/timeline/1976-bg.jpg",
+        background: {
+            image: "",
+            position: "50% 50%"
+        },
 
-        images: [
-
-            "assets/timeline/1976-1.jpg",
-
-            "assets/timeline/1976-2.jpg"
-
-        ]
-
+        images: []
     },
 
-    {
 
-        year: "1990",
+    /* ========================================================
+       1992
+    ======================================================== */
+
+    {
+        year: "1992",
 
         title: "TỜ TIN QUÂN KHU 1",
 
-        subtitle: "Đổi mới nội dung tuyên truyền",
+        subtitle: "Khôi phục hoạt động tuyên truyền",
 
         description:
-
-            "Đáp ứng yêu cầu thông tin, tuyên truyền trong giai đoạn đổi mới đất nước và xây dựng Quân đội.",
-
-        color: "#d4af37",
+            "Năm 1990, Báo Quân khu 1 tạm thời giải thể và ngừng hoạt động. Trước yêu cầu cấp thiết của công tác tuyên truyền đối với lực lượng vũ trang Quân khu, ngày 14/7/1992, Tờ tin Quân khu 1 được khôi phục theo giấy phép xuất bản số 402 của Tổng cục Chính trị. Tháng 5/1998, Tờ tin được tách khỏi Phòng Tuyên huấn, hoạt động độc lập và trực thuộc Cục Chính trị Quân khu.",
 
         theme: "classic",
 
         side: "left",
 
-        background: "assets/timeline/1990-bg.jpg",
+        background: {
+            image: "",
+            position: "50% 50%"
+        },
 
-        images: [
-
-            "assets/timeline/1990-1.jpg"
-
-        ]
-
+        images: []
     },
 
-    {
 
-        year: "2000",
+    /* ========================================================
+       2005
+    ======================================================== */
+
+    {
+        year: "2005",
 
         title: "BÁO QUÂN KHU 1",
 
-        subtitle: "Khẳng định vị thế cơ quan báo chí",
+        subtitle: "Một giai đoạn phát triển mới",
 
         description:
-
-            "Từng bước hiện đại hóa nội dung, hình thức thể hiện và nâng cao chất lượng tuyên truyền.",
-
-        color: "#73c8ff",
+            "Ngày 18/8/2005, Ban Thường vụ Đảng ủy Quân sự Trung ương quyết định nâng Tờ tin của các Quân khu, Quân chủng lên thành Tờ báo. Báo Quân khu 1 tiếp tục thực hiện chức năng là cơ quan của Đảng ủy, Bộ Tư lệnh Quân khu, tiếng nói của lực lượng vũ trang Quân khu; đồng thời không ngừng đổi mới nội dung, hình thức và từng bước mở rộng các loại hình báo chí.",
 
         theme: "modern",
 
         side: "right",
 
-        background: "assets/timeline/2000-bg.jpg",
+        background: {
+            image: "",
+            position: "50% 50%"
+        },
 
-        images: [
-
-            "assets/timeline/2000-1.jpg"
-
-        ]
-
+        images: []
     },
 
-    {
 
+    /* ========================================================
+       2019
+    ======================================================== */
+
+    {
         year: "2019",
 
-        title: "CHUYỂN MÌNH TRONG KỶ NGUYÊN SỐ",
+        title: "BÁO QUÂN KHU 1 ĐIỆN TỬ",
 
-        subtitle: "Phát triển báo điện tử và truyền thông đa nền tảng",
+        subtitle: "Chuyển mình trên môi trường số",
 
         description:
-
-            "Đánh dấu bước chuyển mạnh mẽ sang môi trường số với báo điện tử, video, mạng xã hội và các loại hình báo chí đa phương tiện.",
-
-        color: "#73c8ff",
+            "Từ năm 2019, Báo Quân khu 1 điện tử chính thức đi vào hoạt động, mở ra giai đoạn phát triển mới trên môi trường Internet. Việc xuất bản báo điện tử giúp mở rộng đối tượng bạn đọc, nâng cao tốc độ và hiệu quả thông tin, tuyên truyền. Cùng với quá trình chuyển đổi số báo chí, Báo từng bước số hóa sản phẩm, ứng dụng công nghệ và phát triển tuyên truyền trên các nền tảng số, mạng xã hội.",
 
         theme: "modern",
 
         side: "left",
 
-        background: "assets/timeline/2019-bg.jpg",
+        background: {
+            image: "",
+            position: "50% 50%"
+        },
 
-        images: [
-
-            "assets/timeline/2019-1.jpg",
-
-            "assets/timeline/2019-2.jpg"
-
-        ]
-
+        images: []
     },
 
-    {
 
+    /* ========================================================
+       2026
+    ======================================================== */
+
+    {
         year: "2026",
 
-        title: "KỶ NGUYÊN SỐ",
+        title: "80 NĂM – VỮNG BƯỚC TRONG KỶ NGUYÊN SỐ",
 
-        subtitle: "80 năm xây dựng và phát triển",
+        subtitle: "Đoàn kết – sáng tạo – đổi mới – phát triển",
 
         description:
-
-            "Báo Quân khu 1 trở thành cơ quan báo chí đa phương tiện của lực lượng vũ trang Quân khu, tiếp tục đổi mới, sáng tạo và hội nhập.",
-
-        color: "#73c8ff",
+            "Tròn 80 năm kể từ số Báo Chiến khu đầu tiên ngày 19/8/1946, các thế hệ người làm Báo Quân khu 1 tiếp tục kế thừa và phát huy truyền thống được vun đắp qua nhiều giai đoạn lịch sử. Từ báo in đến báo điện tử và các sản phẩm truyền thông đa phương tiện, Báo Quân khu 1 tiếp tục đổi mới, ứng dụng công nghệ số, nâng cao chất lượng và hiệu quả tuyên truyền, xứng đáng là tiếng nói, diễn đàn của lực lượng vũ trang và quân, dân các dân tộc Việt Bắc.",
 
         theme: "modern",
 
         side: "right",
 
-        background: "assets/timeline/2026-bg.jpg",
+        background: {
+            image: "",
+            position: "50% 50%"
+        },
 
-        images: [
-
-            "assets/timeline/2026-1.jpg",
-
-            "assets/timeline/2026-2.jpg",
-
-            "assets/timeline/2026-3.jpg"
-
-        ]
-
+        images: []
     }
 
 ];

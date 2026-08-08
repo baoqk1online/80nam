@@ -1316,9 +1316,11 @@ span:nth-child(3) {
             50% 50%
         );
 
-    opacity: 0.55;
+    opacity: var(--timeline-bg-opacity, 0.45);
 
     transform: scale(1.02);
+   
+    transition: opacity 120ms linear;
 }
 
 .timeline-item__background-image:not([src]),
@@ -1423,6 +1425,11 @@ span:nth-child(3) {
     box-shadow:
         0 0 0 5px rgba(255, 255, 255, 0.08);
 
+    transform:
+       scale(
+           var(--timeline-marker-scale, 1)
+       );
+
     transition:
         transform var(--transition-base),
         box-shadow var(--transition-base);
@@ -1430,8 +1437,6 @@ span:nth-child(3) {
 
 .timeline-item.is-active
 .timeline-item__marker-dot {
-    transform: scale(1.2);
-
     box-shadow:
         0 0 0 7px rgba(255, 255, 255, 0.1),
         0 0 24px var(--timeline-accent);
@@ -1502,20 +1507,24 @@ span:nth-child(3) {
 .js
 .timeline-item
 .timeline-item__content {
-    opacity: 0.62;
+    opacity:
+        var(
+            --timeline-content-opacity,
+            0.48
+        );
 
     transform:
-        translateY(22px);
+        translateY(
+            var(
+                --timeline-content-shift,
+                18px
+            )
+        );
 }
 
 .js
 .timeline-item.is-active
 .timeline-item__content {
-    opacity: 1;
-
-    transform:
-        translateY(0);
-
     border-color:
         color-mix(
             in srgb,

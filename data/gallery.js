@@ -56,25 +56,111 @@
 window.SiteData = window.SiteData || {};
 
 window.SiteData.gallery = [
-
-    /*
     {
         image: "assets/gallery/gallery-01.webp",
-        caption: "Chú thích ảnh thứ nhất.",
-        credit: "Nguồn: Tư liệu Báo Quân khu 1"
+        caption: "",
+        credit: ""
     },
 
     {
         image: "assets/gallery/gallery-02.webp",
-        caption: "Chú thích ảnh thứ hai.",
-        credit: "Ảnh: Nguyễn Văn A"
+        caption: "",
+        credit: ""
     },
 
     {
         image: "assets/gallery/gallery-03.webp",
-        caption: "Chú thích ảnh thứ ba.",
-        credit: "Nguồn: Tư liệu Báo Quân khu 1"
-    }
-    */
+        caption: "",
+        credit: ""
+    },
 
+    {
+        image: "assets/gallery/gallery-04.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-05.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-06.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-07.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-08.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-09.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-10.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-11.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-12.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-13.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-14.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-15.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-16.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-17.webp",
+        caption: "",
+        credit: ""
+    },
+
+    {
+        image: "assets/gallery/gallery-18.webp",
+        caption: "",
+        credit: ""
+    }
 ];

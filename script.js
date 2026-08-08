@@ -2246,7 +2246,7 @@ function updateScrollUI() {
     updateHeaderState();
     updateBackToTop();
     updateTimelineProgress();
-
+    updateTimelineFocus();
 
     State.scrollFramePending = false;
 }

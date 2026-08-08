@@ -1275,102 +1275,121 @@ function initTimelineMediaControls() {
     }
 }
 
-
 /* ============================================================
-   13. TIMELINE ACTIVE OBSERVER
+   13. TIMELINE SCROLL FOCUS
+   Hiệu ứng Timeline thay đổi liên tục theo vị trí cuộn.
 ============================================================ */
 
 function setActiveTimelineItem(activeItem) {
-    if (!activeItem) {
-        return;
-    }
-
-
-    State.timelineItems.forEach(
-        (item) => {
-            item.classList.toggle(
-                "is-active",
-                item === activeItem
-            );
-        }
-    );
+    State.timelineItems.forEach((item) => {
+        item.classList.toggle(
+            "is-active",
+            item === activeItem
+        );
+    });
 }
 
 
-function initTimelineObserver() {
+function updateTimelineFocus() {
     if (!State.timelineItems.length) {
         return;
     }
 
+    const viewportCenter =
+        window.innerHeight * 0.5;
 
-    if (
-        !("IntersectionObserver" in window)
-    ) {
-        State.timelineItems.forEach(
-            (item) => {
-                item.classList.add(
-                    "is-active"
-                );
-            }
+    const focusRange =
+        window.innerHeight * 0.82;
+
+    let strongestItem = null;
+    let strongestFocus = -1;
+
+    State.timelineItems.forEach((item) => {
+        const rect =
+            item.getBoundingClientRect();
+
+        const itemCenter =
+            rect.top + rect.height * 0.5;
+
+        const distance =
+            Math.abs(
+                itemCenter - viewportCenter
+            );
+
+        let focus =
+            clamp(
+                1 - distance / focusRange,
+                0,
+                1
+            );
+
+        /*
+           Smoothstep:
+           Làm chuyển sáng/tối mềm hơn,
+           không có cảm giác bật/tắt.
+        */
+        focus =
+            focus *
+            focus *
+            (3 - 2 * focus);
+
+        const contentOpacity =
+            0.48 + focus * 0.52;
+
+        const contentShift =
+            (1 - focus) * 18;
+
+        const backgroundOpacity =
+            0.38 + focus * 0.24;
+
+        const markerScale =
+            1 + focus * 0.22;
+
+
+        item.style.setProperty(
+            "--timeline-content-opacity",
+            contentOpacity.toFixed(3)
         );
 
-        return;
-    }
+        item.style.setProperty(
+            "--timeline-content-shift",
+            `${contentShift.toFixed(1)}px`
+        );
 
+        item.style.setProperty(
+            "--timeline-bg-opacity",
+            backgroundOpacity.toFixed(3)
+        );
 
-    const observer =
-        new IntersectionObserver(
-            (entries) => {
-                const visibleEntries =
-                    entries
-                        .filter(
-                            (entry) =>
-                                entry.isIntersecting
-                        )
-                        .sort(
-                            (a, b) =>
-                                b.intersectionRatio -
-                                a.intersectionRatio
-                        );
-
-
-                if (!visibleEntries.length) {
-                    return;
-                }
-
-
-                setActiveTimelineItem(
-                    visibleEntries[0].target
-                );
-            },
-            {
-                root: null,
-
-                rootMargin:
-                    "-30% 0px -30% 0px",
-
-                threshold: [
-                    0,
-                    0.1,
-                    0.25,
-                    0.5,
-                    0.75
-                ]
-            }
+        item.style.setProperty(
+            "--timeline-marker-scale",
+            markerScale.toFixed(3)
         );
 
 
-    State.timelineItems.forEach(
-        (item) => {
-            observer.observe(item);
+        if (focus > strongestFocus) {
+            strongestFocus = focus;
+            strongestItem = item;
         }
-    );
+    });
 
 
-    State.timelineItems[0]
-        .classList.add("is-active");
+    if (strongestItem) {
+        setActiveTimelineItem(
+            strongestItem
+        );
+    }
 }
 
+
+function initTimelineObserver() {
+    /*
+       Giữ tên hàm để không phải sửa renderTimeline().
+       Không dùng IntersectionObserver nữa.
+    */
+
+    updateTimelineFocus();
+}
 
 /* ============================================================
    14. GALLERY NORMALIZATION

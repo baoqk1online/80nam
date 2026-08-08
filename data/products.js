@@ -18,7 +18,7 @@ window.SiteData.products = [
 
         title: "Số báo đặc biệt kỷ niệm 80 năm",
 
-        subtitle: "Ấn phẩm đặc biệt chào mừng 80 năm Báo Quân khu 1",
+        subtitle: "Số báo đặc biệt kỷ niệm 80 năm xuất bản số báo đầu tiên",
 
         thumbnail: "assets/products/baoin.webp",
 
@@ -34,13 +34,13 @@ window.SiteData.products = [
 
         thumbnail: "assets/products/phim.webp",
 
-        url: "https://baoquankhu1.vn/video/phong-su/chu-dong-chiem-linh-giu-vung-%E2%80%9Ctran-dia-so%E2%80%9D-6242-18.html"
+        url: "https://www.youtube.com/watch?v=i1v2Katnglw"
     },
 
     {
         id: "website",
 
-        title: "Chuyên trang điện tử",
+        title: "Website Báo Quân khu 1 điện tử",
 
         subtitle: "Báo Quân khu 1 trên môi trường số",
 

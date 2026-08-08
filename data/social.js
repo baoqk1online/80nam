@@ -1,45 +1,45 @@
-window.social = [
+"use strict";
 
+/* ============================================================
+   80 NĂM BÁO QUÂN KHU 1
+   DATA / SOCIAL.JS
+
+   Cố định 3 nền tảng:
+   1. Facebook
+   2. YouTube
+   3. TikTok
+============================================================ */
+
+window.SiteData = window.SiteData || {};
+
+window.SiteData.social = [
     {
-
         id: "facebook",
 
         title: "Facebook",
 
-        subtitle: "Báo Quân khu 1 Điện tử",
+        thumbnail: "assets/social/facebook.webp",
 
-        url: "https://www.facebook.com/baoquankhu1",
-
-        thumbnail: "assets/products/facebook.png"
-
+        url: "https://www.facebook.com/baoquankhu1/"
     },
 
     {
-
         id: "youtube",
 
         title: "YouTube",
 
-        subtitle: "Báo - Truyền hình Quân khu 1",
+        thumbnail: "assets/social/youtube.webp",
 
-        url: "https://www.youtube.com/@bao-truyenhinhquankhu1",
-
-        thumbnail: "assets/products/youtube.png"
-
+        url: "https://www.youtube.com/@bao-truyenhinhquankhu1"
     },
 
     {
-
         id: "tiktok",
 
         title: "TikTok",
 
-        subtitle: "Báo Quân khu 1",
+        thumbnail: "assets/social/tiktok.webp",
 
-        url: "https://www.tiktok.com/@baoquankhu1",
-
-        thumbnail: "assets/products/tiktok.png"
-
+        url: "https://www.tiktok.com/@baoquankhu1"
     }
-
 ];

@@ -16,9 +16,9 @@ window.SiteData.products = [
     {
         id: "newspaper",
 
-        title: "Số báo đặc biệt kỷ niệm 80 năm",
+        title: "Số báo đặc biệt",
 
-        subtitle: "Số báo đặc biệt kỷ niệm 80 năm xuất bản số báo đầu tiên",
+        subtitle: "Kỷ niệm 80 năm xuất bản số báo đầu tiên (19/8/1946-19/8/2026)",
 
         thumbnail: "assets/products/baoin.webp",
 

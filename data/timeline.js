@@ -77,7 +77,7 @@ window.SiteData.timeline = [
         side: "left",
 
         background: {
-            image: "",
+            image: "assets/timeline/1946-bg.webp",
             position: "50% 50%"
         },
 
@@ -104,7 +104,7 @@ window.SiteData.timeline = [
         side: "right",
 
         background: {
-            image: "",
+            image: "assets/timeline/1947-bg.webp",
             position: "50% 50%"
         },
 
@@ -131,7 +131,7 @@ window.SiteData.timeline = [
         side: "left",
 
         background: {
-            image: "",
+            image: "assets/timeline/1950-bg.webp",
             position: "50% 50%"
         },
 
@@ -158,7 +158,7 @@ window.SiteData.timeline = [
         side: "right",
 
         background: {
-            image: "",
+            image: "assets/timeline/1954-bg.webp",
             position: "50% 50%"
         },
 
@@ -185,7 +185,7 @@ window.SiteData.timeline = [
         side: "left",
 
         background: {
-            image: "",
+            image: "assets/timeline/1957-bg.webp",
             position: "50% 50%"
         },
 
@@ -212,7 +212,7 @@ window.SiteData.timeline = [
         side: "right",
 
         background: {
-            image: "",
+            image: "assets/timeline/1976-bg.webp",
             position: "50% 50%"
         },
 
@@ -239,7 +239,7 @@ window.SiteData.timeline = [
         side: "left",
 
         background: {
-            image: "",
+            image: "assets/timeline/1992-bg.webp",
             position: "50% 50%"
         },
 
@@ -266,7 +266,7 @@ window.SiteData.timeline = [
         side: "right",
 
         background: {
-            image: "",
+            image: "assets/timeline/2005-bg.webp",
             position: "50% 50%"
         },
 
@@ -293,7 +293,7 @@ window.SiteData.timeline = [
         side: "left",
 
         background: {
-            image: "",
+            image: "assets/timeline/2019-bg.webp",
             position: "50% 50%"
         },
 
@@ -320,7 +320,7 @@ window.SiteData.timeline = [
         side: "right",
 
         background: {
-            image: "",
+            image: "assets/timeline/2026-bg.webp",
             position: "50% 50%"
         },
 

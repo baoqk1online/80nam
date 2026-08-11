@@ -45,9 +45,12 @@ window.SiteData.products = [
         subtitle: "Báo Quân khu 1 trên môi trường số",
 
         thumbnail: "assets/products/website.webp",
-
-        url: "https://baoquankhu1.vn/"
-
-       mobileUrl:"https://m.baoquankhu1.vn/"
-    }
+        get url() {
+            return window.matchMedia(
+                "(max-width: 767px)"
+            ).matches
+                ? "https://m.baoquankhu1.vn/"
+                : "https://baoquankhu1.vn/";
+       }
+   }
 ];

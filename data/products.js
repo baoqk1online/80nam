@@ -47,5 +47,7 @@ window.SiteData.products = [
         thumbnail: "assets/products/website.webp",
 
         url: "https://baoquankhu1.vn/"
+
+       mobileUrl:"https://m.baoquankhu1.vn/"
     }
 ];

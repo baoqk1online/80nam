@@ -2403,48 +2403,6 @@ function renderAll() {
     }
 }
 
-
-/* ============================================================
-   31. EVENTS
-============================================================ */
-
-function initEvents() {
-    initMobileMenu();
-    initBackToTop();
-    initGalleryViewer();
-    initInternalLinks();
-
-
-    window.addEventListener(
-        "scroll",
-        handleScroll,
-        {
-            passive: true
-        }
-    );
-
-
-    window.addEventListener(
-        "resize",
-        handleResize,
-        {
-            passive: true
-        }
-    );
-
-
-    window.addEventListener(
-        "load",
-        () => {
-            handleResize();
-            handleScroll();
-        },
-        {
-            once: true
-        }
-    );
-}
-
 function initImageProtection() {
     document.addEventListener(
         "contextmenu",
@@ -2484,6 +2442,49 @@ function initImageProtection() {
             }
 
             event.preventDefault();
+        }
+    );
+}
+
+
+/* ============================================================
+   31. EVENTS
+============================================================ */
+
+function initEvents() {
+    initMobileMenu();
+    initBackToTop();
+    initGalleryViewer();
+    initInternalLinks();
+    initImageProtection();
+
+
+    window.addEventListener(
+        "scroll",
+        handleScroll,
+        {
+            passive: true
+        }
+    );
+
+
+    window.addEventListener(
+        "resize",
+        handleResize,
+        {
+            passive: true
+        }
+    );
+
+
+    window.addEventListener(
+        "load",
+        () => {
+            handleResize();
+            handleScroll();
+        },
+        {
+            once: true
         }
     );
 }

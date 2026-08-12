@@ -2445,6 +2445,49 @@ function initEvents() {
     );
 }
 
+function initImageProtection() {
+    document.addEventListener(
+        "contextmenu",
+        (event) => {
+            if (
+                !(event.target instanceof Element)
+            ) {
+                return;
+            }
+
+            const image =
+                event.target.closest("img");
+
+            if (!image) {
+                return;
+            }
+
+            event.preventDefault();
+        }
+    );
+
+
+    document.addEventListener(
+        "dragstart",
+        (event) => {
+            if (
+                !(event.target instanceof Element)
+            ) {
+                return;
+            }
+
+            const image =
+                event.target.closest("img");
+
+            if (!image) {
+                return;
+            }
+
+            event.preventDefault();
+        }
+    );
+}
+
 
 /* ============================================================
    32. INIT

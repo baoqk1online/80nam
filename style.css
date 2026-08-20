@@ -1846,6 +1846,181 @@ span:nth-child(3) {
         );
 }
 
+/* ============================================================
+   CELEBRATION
+============================================================ */
+
+.celebration-section {
+    color: var(--color-text-light);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(201, 165, 93, 0.16),
+            transparent 34%
+        ),
+        linear-gradient(
+            180deg,
+            #0d1b14,
+            #102019 58%,
+            #0b1712
+        );
+}
+
+
+.celebration-heading {
+    max-width: 900px;
+
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+
+.celebration-section
+.section-heading__eyebrow {
+    color: var(--color-gold-light);
+}
+
+
+.celebration-section
+.section-heading__title {
+    color: var(--color-text-light);
+}
+
+
+.celebration-section
+.section-heading__description {
+    margin-inline: auto;
+
+    color: var(--color-text-light-soft);
+}
+
+
+.celebration-date {
+    margin:
+        -2px
+        0
+        18px;
+
+    font-size:
+        clamp(
+            0.9rem,
+            2.6vw,
+            1.05rem
+        );
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    color: var(--color-gold-light);
+}
+
+
+/* ============================================================
+   CELEBRATION GRID
+============================================================ */
+
+.celebration-grid {
+    display: grid;
+
+    gap:
+        clamp(
+            10px,
+            2vw,
+            18px
+        );
+}
+
+
+.celebration-row {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    align-items: start;
+
+    gap:
+        clamp(
+            10px,
+            2vw,
+            18px
+        );
+}
+
+/* ============================================================
+   CELEBRATION IMAGE
+============================================================ */
+
+.celebration-item {
+    min-width: 0;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius:
+        clamp(
+            10px,
+            2vw,
+            16px
+        );
+
+    box-shadow:
+        0 16px 42px rgba(0, 0, 0, 0.18);
+}
+
+
+.celebration-item__image {
+    width: 100%;
+    height: auto;
+}
+
+
+.celebration-item__info {
+    padding:
+        12px
+        14px
+        14px;
+}
+
+
+.celebration-item__caption {
+    margin-bottom: 4px;
+
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1.5;
+
+    color: rgba(255, 255, 255, 0.92);
+}
+
+
+.celebration-item__caption:empty {
+    display: none;
+}
+
+
+.celebration-item__credit {
+    margin-bottom: 0;
+
+    font-size: 0.76rem;
+    line-height: 1.45;
+
+    color: rgba(255, 255, 255, 0.62);
+}
+
+
+.celebration-item__credit:empty {
+    display: none;
+}
 
 /* ============================================================
    19. GALLERY
@@ -2873,7 +3048,18 @@ span:nth-child(3) {
             );
     }
 
+    /* Celebration */
 
+    .celebration-row--pair {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .celebration-row--triple {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+   
     /* Gallery */
 
     .gallery-grid {

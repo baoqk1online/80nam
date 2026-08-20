@@ -146,7 +146,13 @@ window.SiteData.timeline = [
             position: "50% 50%"
         },
 
-        images: []
+        images: [
+          {
+              image: "assets/timeline/1950-01.webp",
+              caption: "",
+              credit: ""
+          }
+        ]
     },
 
 

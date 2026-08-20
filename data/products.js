@@ -46,20 +46,24 @@ window.SiteData.products = [
              }
     },
 
-    {
-        id: "website",
-
-        title: "Website Báo Quân khu 1 điện tử",
-
-        subtitle: "Báo Quân khu 1 trên môi trường số",
-
-        thumbnail: "assets/products/website.webp",
-        get url() {
-            return window.matchMedia(
-                "(max-width: 767px)"
-            ).matches
-                ? "https://baoquankhu1.vn/su-kien/ky-niem-80-nam-xuat-ban-so-bao-dau-tien-19819461982026_46109.html/"
-                : "https://m.baoquankhu1.vn/su-kien/ky-niem-80-nam-xuat-ban-so-bao-dau-tien-19819461982026_46109.html/";
+   {
+       id: "website",
+       title: "Chuyên trang điện tử",
+       subtitle: "Báo Quân khu 1 trên môi trường số",
+       thumbnail: "assets/products/website.webp",
+   
+       get url() {
+           const desktopUrl =
+               "https://baoquankhu1.vn/su-kien/ky-niem-80-nam-xuat-ban-so-bao-dau-tien-19819461982026_46109.html";
+   
+           const mobileUrl =
+               "https://m.baoquankhu1.vn/su-kien/ky-niem-80-nam-xuat-ban-so-bao-dau-tien-19819461982026_46109.html";
+   
+           return window.matchMedia(
+               "(max-width: 1023px)"
+           ).matches
+               ? mobileUrl
+               : desktopUrl;
        }
    }
 ];

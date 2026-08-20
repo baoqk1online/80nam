@@ -355,7 +355,23 @@ window.SiteData.timeline = [
             position: "50% 50%"
         },
 
-        images: []
+        images: [
+         {
+              image: "assets/timeline/2019-01.webp",
+              caption: "",
+              credit: ""
+         },
+         {
+              image: "assets/timeline/2019-02.webp",
+              caption: "",
+              credit: ""
+         },
+         {
+              image: "assets/timeline/2019-03.webp",
+              caption: "",
+              credit: ""
+         },
+        ]
     },
 
 

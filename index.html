@@ -1010,29 +1010,47 @@
          TEMPLATE: CELEBRATION IMAGE
     ========================================================== -->
 
-    <template id="celebration-image-template">
+<template id="celebration-image-template">
 
-        <figure class="celebration-item">
+    <figure class="celebration-item">
+
+        <button
+            class="celebration-item__button gallery-item__button"
+            type="button"
+            aria-label="Xem ảnh lớn"
+        >
 
             <img
-                class="celebration-item__image"
+                class="celebration-item__image gallery-item__image"
                 src=""
                 alt=""
                 loading="lazy"
                 decoding="async"
             >
 
-            <figcaption class="celebration-item__info">
+            <span
+                class="gallery-item__overlay"
+                aria-hidden="true"
+            >
+                <span class="gallery-item__view-icon">
+                    ⤢
+                </span>
+            </span>
 
-                <p class="celebration-item__caption"></p>
+        </button>
 
-                <p class="celebration-item__credit"></p>
 
-            </figcaption>
+        <figcaption class="celebration-item__info">
 
-        </figure>
+            <p class="celebration-item__caption"></p>
 
-    </template>
+            <p class="celebration-item__credit"></p>
+
+        </figcaption>
+
+    </figure>
+
+</template>
 
     <!-- =========================================================
          TEMPLATE: GALLERY ITEM

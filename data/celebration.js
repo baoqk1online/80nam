@@ -21,10 +21,10 @@ window.SiteData = window.SiteData || {};
 
 window.SiteData.celebration = {
 
-    eyebrow: "Lễ kỷ niệm 80 năm",
+    eyebrow: "Gặp mặt",
 
     title:
-        "Gặp mặt kỷ niệm 80 năm ngày truyền thống Báo Quân khu 1",
+        "Kỷ niệm 80 năm ngày truyền thống Báo Quân khu 1",
 
     date:
         "19/8/1946 – 19/8/2026",

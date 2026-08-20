@@ -26,15 +26,24 @@ window.SiteData.products = [
     },
 
     {
-        id: "documentary",
-
-        title: "Phim truyền thống",
-
-        subtitle: "80 năm đồng hành cùng quân dân Việt Bắc",
-
-        thumbnail: "assets/products/phim.webp",
-
-        url: "https://www.youtube.com/watch?v=mE534mDLC6s&t=1454s"
+         id: "documentary",
+         title: "Phim truyền thống",
+         subtitle: "Hành trình 80 năm Báo Quân khu 1",
+         thumbnail: "assets/products/phim.webp",
+         
+             get url() {
+                 const desktopUrl =
+                     "https://baoquankhu1.vn/video/phim-tai-lieu/phim-truyen-thong-bao-quan-khu-1-80-nam-dong-hanh-cung-quan-dan-viet-bac-6243-17.html";
+         
+                 const mobileUrl =
+                     "https://m.baoquankhu1.vn/video/phim-truyen-thong-bao-quan-khu-1-80-nam-dong-hanh-cung-quan-dan-viet-bac-6243.html";
+         
+                 return window.matchMedia(
+                     "(max-width: 1023px)"
+                 ).matches
+                     ? mobileUrl
+                     : desktopUrl;
+             }
     },
 
     {

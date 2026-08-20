@@ -48,7 +48,7 @@ window.SiteData.products = [
 
    {
        id: "website",
-       title: "Chuyên trang điện tử",
+       title: "Website Báo Quân khu 1 điện tử",
        subtitle: "Báo Quân khu 1 trên môi trường số",
        thumbnail: "assets/products/website.webp",
    

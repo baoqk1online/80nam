@@ -58,12 +58,19 @@ const DOM = {
     timelineContainer: null,
     timelineProgress: null,
 
+    celebrationContainer: null,
+    celebrationEyebrow: null,
+    celebrationTitle: null,
+    celebrationDate: null,
+    celebrationIntro: null,
+
     galleryContainer: null,
 
     productTemplate: null,
     socialTemplate: null,
     timelineTemplate: null,
     timelineImageTemplate: null,
+    celebrationImageTemplate: null,
     galleryTemplate: null,
 
     galleryViewer: null,
@@ -222,6 +229,22 @@ function cacheDOM() {
         document.getElementById("timeline-progress");
 
 
+    DOM.celebrationContainer =
+        document.getElementById("celebration-container");
+
+    DOM.celebrationEyebrow =
+        document.getElementById("celebration-eyebrow");
+
+    DOM.celebrationTitle =
+        document.getElementById("celebration-title");
+
+    DOM.celebrationDate =
+        document.getElementById("celebration-date");
+
+    DOM.celebrationIntro =
+        document.getElementById("celebration-intro");
+
+
     DOM.galleryContainer =
         document.getElementById("gallery-container");
 
@@ -237,6 +260,9 @@ function cacheDOM() {
 
     DOM.timelineImageTemplate =
         document.getElementById("timeline-image-template");
+
+    DOM.celebrationImageTemplate =
+        document.getElementById("celebration-image-template");
 
     DOM.galleryTemplate =
         document.getElementById("gallery-template");
@@ -1392,6 +1418,266 @@ function initTimelineObserver() {
 }
 
 /* ============================================================
+   CELEBRATION NORMALIZATION
+============================================================ */
+
+function normalizeCelebrationImage(item) {
+    if (typeof item === "string") {
+        return {
+            image: asText(item),
+            caption: "",
+            credit: ""
+        };
+    }
+
+
+    if (
+        !item ||
+        typeof item !== "object"
+    ) {
+        return null;
+    }
+
+
+    const image =
+        asText(
+            item.image ||
+            item.src
+        );
+
+
+    if (!image) {
+        return null;
+    }
+
+
+    return {
+        image,
+        caption: asText(item.caption),
+        credit: asText(item.credit)
+    };
+}
+
+
+/* ============================================================
+   CELEBRATION RENDER
+============================================================ */
+
+function renderCelebration() {
+    if (
+        !DOM.celebrationContainer ||
+        !DOM.celebrationImageTemplate
+    ) {
+        return;
+    }
+
+
+    const celebration =
+        window.SiteData.celebration;
+
+
+    DOM.celebrationContainer.replaceChildren();
+
+
+    if (
+        !celebration ||
+        typeof celebration !== "object"
+    ) {
+        return;
+    }
+
+
+    setText(
+        DOM.celebrationEyebrow,
+        celebration.eyebrow
+    );
+
+    setText(
+        DOM.celebrationTitle,
+        celebration.title
+    );
+
+    setText(
+        DOM.celebrationDate,
+        celebration.date
+    );
+
+    setText(
+        DOM.celebrationIntro,
+        celebration.intro
+    );
+
+
+    if (DOM.celebrationIntro) {
+        DOM.celebrationIntro.hidden =
+            !asText(celebration.intro);
+    }
+
+
+    const rows =
+        getArray(celebration.rows);
+
+
+    if (!rows.length) {
+        return;
+    }
+
+
+    let imageNumber = 0;
+
+
+    const fragment =
+        document.createDocumentFragment();
+
+
+    rows.forEach((row) => {
+        if (
+            !row ||
+            typeof row !== "object"
+        ) {
+            return;
+        }
+
+
+        const images =
+            getArray(row.images)
+                .map(normalizeCelebrationImage)
+                .filter(Boolean);
+
+
+        if (!images.length) {
+            return;
+        }
+
+
+        const requestedLayout =
+            slugify(row.layout);
+
+
+        const layout =
+            [
+                "full",
+                "pair",
+                "triple"
+            ].includes(requestedLayout)
+                ? requestedLayout
+                : "full";
+
+
+        const rowElement =
+            document.createElement("div");
+
+
+        rowElement.className =
+            `celebration-row celebration-row--${layout}`;
+
+
+        images.forEach((item) => {
+            imageNumber += 1;
+
+
+            const clone =
+                getTemplate(
+                    DOM.celebrationImageTemplate
+                );
+
+
+            if (!clone) {
+                return;
+            }
+
+
+            const figure =
+                clone.querySelector(
+                    ".celebration-item"
+                );
+
+            const image =
+                clone.querySelector(
+                    ".celebration-item__image"
+                );
+
+            const caption =
+                clone.querySelector(
+                    ".celebration-item__caption"
+                );
+
+            const credit =
+                clone.querySelector(
+                    ".celebration-item__credit"
+                );
+
+            const info =
+                clone.querySelector(
+                    ".celebration-item__info"
+                );
+
+
+            if (!figure || !image) {
+                return;
+            }
+
+
+            image.src =
+                item.image;
+
+
+            image.alt =
+                item.caption ||
+                item.credit ||
+                `Lễ kỷ niệm 80 năm – ảnh ${imageNumber}`;
+
+
+            setText(
+                caption,
+                item.caption
+            );
+
+            setText(
+                credit,
+                item.credit
+            );
+
+
+            if (
+                info &&
+                !item.caption &&
+                !item.credit
+            ) {
+                info.hidden = true;
+            }
+
+
+            setImageErrorHandler(
+                image,
+                () => {
+                    figure.remove();
+                }
+            );
+
+
+            rowElement.appendChild(
+                clone
+            );
+        });
+
+
+        if (
+            rowElement.childElementCount
+        ) {
+            fragment.appendChild(
+                rowElement
+            );
+        }
+    });
+
+
+    DOM.celebrationContainer.appendChild(
+        fragment
+    );
+}
+
+/* ============================================================
    14. GALLERY NORMALIZATION
 ============================================================ */
 
@@ -2391,7 +2677,15 @@ function renderAll() {
             error
         );
     }
-
+   
+    try {
+        renderCelebration();
+    } catch (error) {
+        console.error(
+            "Không thể render Celebration:",
+            error
+        );
+    }
 
     try {
         renderGallery();

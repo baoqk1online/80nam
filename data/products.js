@@ -58,8 +58,8 @@ window.SiteData.products = [
             return window.matchMedia(
                 "(max-width: 767px)"
             ).matches
-                ? "https://m.baoquankhu1.vn/"
-                : "https://baoquankhu1.vn/";
+                ? "https://baoquankhu1.vn/su-kien/ky-niem-80-nam-xuat-ban-so-bao-dau-tien-19819461982026_46109.html/"
+                : "https://m.baoquankhu1.vn/su-kien/ky-niem-80-nam-xuat-ban-so-bao-dau-tien-19819461982026_46109.html/";
        }
    }
 ];

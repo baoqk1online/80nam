@@ -210,17 +210,17 @@ window.SiteData.timeline = [
               image: "assets/timeline/1957-02.webp",
               caption: "",
               credit: ""
-         }
+         },
          {
               image: "assets/timeline/1957-03.webp",
               caption: "",
               credit: ""
-         }
+         },
          {
               image: "assets/timeline/1957-04.webp",
               caption: "",
               credit: ""
-         }
+         },
          {
               image: "assets/timeline/1957-05.webp",
               caption: "",
@@ -263,12 +263,12 @@ window.SiteData.timeline = [
               image: "assets/timeline/1976-02.webp",
               caption: "",
               credit: ""
-         }
+         },
          {
               image: "assets/timeline/1976-03.webp",
               caption: "",
               credit: ""
-         }
+         },
          {
               image: "assets/timeline/1976-04.webp",
               caption: "",
@@ -392,12 +392,12 @@ window.SiteData.timeline = [
               image: "assets/timeline/2026-02.webp",
               caption: "",
               credit: ""
-         }
+         },
          {
               image: "assets/timeline/2026-03.webp",
               caption: "",
               credit: ""
-         }
+         },
         ]
     }
 

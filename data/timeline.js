@@ -162,6 +162,11 @@ window.SiteData.timeline = [
               image: "assets/timeline/1950-01.webp",
               caption: "",
               credit: ""
+          },
+          {
+              image: "assets/timeline/1950-02.webp",
+              caption: "Bộ đội hành quân trên chiến trường biên giới phía Bắc trong Chiến dịch Biên giới năm 1950.",
+              credit: "Ảnh: TTXVN"
           }
         ]
     },

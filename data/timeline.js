@@ -124,6 +124,11 @@ window.SiteData.timeline = [
               image: "assets/timeline/1947-01.webp",
               caption: "",
               credit: ""
+          },
+          {
+              image: "assets/timeline/1947-02.webp",
+              caption: "",
+              credit: ""
           }
         ]
     },
@@ -185,7 +190,18 @@ window.SiteData.timeline = [
             position: "50% 50%"
         },
 
-        images: []
+        images: [
+          {
+              image: "assets/timeline/1954-01.webp",
+              caption: "Chiều 7/5/1954, lá cờ “Quyết chiến – Quyết thắng” của Quân đội nhân dân Việt Nam tung bay trên nóc hầm chỉ huy của tướng De Castries, đánh dấu Chiến dịch Điện Biên Phủ toàn thắng.",
+              credit: "Ảnh tư liệu."
+          },
+          {
+              image: "assets/timeline/1954-02.webp",
+              caption: "Bộ đội, dân công và đồng bào các dân tộc tại lễ mừng Chiến thắng Điện Biên Phủ; lá cờ “Quyết chiến Quyết thắng” được giương cao giữa đoàn quân chiến thắng.",
+              credit: "Ảnh tư liệu."
+          } 
+        ]
     },
 
 

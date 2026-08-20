@@ -94,12 +94,6 @@ const State = {
     timelineItems: [],
     timelineMediaControllers: [],
 
-    celebration: {
-        items: [],
-        broken: new Set(),
-        preloaded: new Set()
-    },
-
     gallery: {
         items: [],
         broken: new Set(),
@@ -107,9 +101,7 @@ const State = {
         currentIndex: -1,
         triggerElement: null,
 
-        preloaded: new Set(),
-
-        viewerSource: "gallery"
+        preloaded: new Set()
     }
 };
 
@@ -1485,9 +1477,7 @@ function renderCelebration() {
 
 
     DOM.celebrationContainer.replaceChildren();
-    State.celebration.items = [];
-    State.celebration.broken.clear();
-    State.celebration.preloaded.clear();
+
 
     if (
         !celebration ||
@@ -1584,10 +1574,7 @@ function renderCelebration() {
 
         images.forEach((item) => {
             imageNumber += 1;
-            const celebrationIndex =
-                State.celebration.items.length;
-            
-            State.celebration.items.push(item);
+
 
             const clone =
                 getTemplate(
@@ -1605,11 +1592,6 @@ function renderCelebration() {
                     ".celebration-item"
                 );
 
-           const button =
-                clone.querySelector(
-                    ".celebration-item__button"
-                );
-           
             const image =
                 clone.querySelector(
                     ".celebration-item__image"
@@ -1630,13 +1612,11 @@ function renderCelebration() {
                     ".celebration-item__info"
                 );
 
-            if (
-                !figure ||
-                !button ||
-                !image
-            ) {
+
+            if (!figure || !image) {
                 return;
             }
+
 
             image.src =
                 item.image;
@@ -1647,25 +1627,7 @@ function renderCelebration() {
                 item.credit ||
                 `Lễ kỷ niệm 80 năm – ảnh ${imageNumber}`;
 
-            button.setAttribute(
-                "aria-label",
-                item.caption
-                    ? `Xem ảnh lớn: ${item.caption}`
-                    : `Xem ảnh lễ kỷ niệm số ${imageNumber}`
-            );
-            
-            
-            button.addEventListener(
-                "click",
-                () => {
-                    openGalleryViewer(
-                        celebrationIndex,
-                        button,
-                        "celebration"
-                    );
-                }
-            );
-           
+
             setText(
                 caption,
                 item.caption
@@ -1689,10 +1651,6 @@ function renderCelebration() {
             setImageErrorHandler(
                 image,
                 () => {
-                    State.celebration.broken.add(
-                        celebrationIndex
-                    );
-            
                     figure.remove();
                 }
             );
@@ -1786,8 +1744,6 @@ function renderGallery() {
     State.gallery.items = gallery;
     State.gallery.broken.clear();
     State.gallery.currentIndex = -1;
-    State.gallery.viewerSource =
-      "gallery";
 
 
     if (!gallery.length) {
@@ -1910,16 +1866,6 @@ function renderGallery() {
     DOM.galleryContainer.appendChild(fragment);
 }
 
-function getActiveViewerCollection() {
-    if (
-        State.gallery.viewerSource ===
-        "celebration"
-    ) {
-        return State.celebration;
-    }
-
-    return State.gallery;
-}
 
 /* ============================================================
    16. GALLERY INDEX HELPERS
@@ -1929,11 +1875,8 @@ function findGalleryIndex(
     startIndex,
     direction
 ) {
-    const collection =
-        getActiveViewerCollection();
-
     const items =
-        collection.items;
+        State.gallery.items;
 
 
     let index =
@@ -1945,7 +1888,7 @@ function findGalleryIndex(
         index < items.length
     ) {
         if (
-            !collection.broken.has(index)
+            !State.gallery.broken.has(index)
         ) {
             return index;
         }
@@ -1979,28 +1922,24 @@ function getNextGalleryIndex() {
 ============================================================ */
 
 function preloadGalleryImage(index) {
-    const collection =
-        getActiveViewerCollection();
-
-
     if (
         index < 0 ||
-        index >= collection.items.length
+        index >= State.gallery.items.length
     ) {
         return;
     }
 
 
     if (
-        collection.broken.has(index) ||
-        collection.preloaded.has(index)
+        State.gallery.broken.has(index) ||
+        State.gallery.preloaded.has(index)
     ) {
         return;
     }
 
 
     const item =
-        collection.items[index];
+        State.gallery.items[index];
 
 
     if (!item || !item.image) {
@@ -2008,7 +1947,7 @@ function preloadGalleryImage(index) {
     }
 
 
-    collection.preloaded.add(index);
+    State.gallery.preloaded.add(index);
 
 
     const image =
@@ -2022,8 +1961,8 @@ function preloadGalleryImage(index) {
     image.addEventListener(
         "error",
         () => {
-            collection.broken.add(index);
-            collection.preloaded.delete(index);
+            State.gallery.broken.add(index);
+            State.gallery.preloaded.delete(index);
         },
         {
             once: true
@@ -2078,16 +2017,13 @@ function updateGalleryViewerControls() {
 
 
 function showGalleryItem(index) {
-    const collection =
-        getActiveViewerCollection();
-
     const item =
-        collection.items[index];
+        State.gallery.items[index];
 
 
     if (
         !item ||
-        collection.broken.has(index)
+        State.gallery.broken.has(index)
     ) {
         return false;
     }
@@ -2105,15 +2041,12 @@ function showGalleryItem(index) {
         DOM.galleryViewerImage.src =
             item.image;
 
-      DOM.galleryViewerImage.alt =
+        DOM.galleryViewerImage.alt =
             item.caption ||
             item.credit ||
-            (
-               State.gallery.viewerSource ===
-               "celebration"
-                  ? `Ảnh lễ kỷ niệm số ${index + 1}`
-                  : `Ảnh triển lãm số ${index + 1}`
-            );
+            `Ảnh triển lãm số ${index + 1}`;
+    }
+
 
     setText(
         DOM.galleryViewerCaption,
@@ -2128,8 +2061,8 @@ function showGalleryItem(index) {
 
 
     if (DOM.galleryViewerCounter) {
-         DOM.galleryViewerCounter.textContent =
-             `${index + 1} / ${collection.items.length}`;
+        DOM.galleryViewerCounter.textContent =
+            `${index + 1} / ${State.gallery.items.length}`;
     }
 
 
@@ -2157,43 +2090,21 @@ function isGalleryViewerOpen() {
 
 function openGalleryViewer(
     index,
-    triggerElement,
-    source = "gallery"
+    triggerElement
 ) {
-      State.gallery.viewerSource =
-       source === "celebration"
-           ? "celebration"
-           : "gallery";
-   
-   
-   const collection =
-       getActiveViewerCollection();
-   
-      if (
-          !DOM.galleryViewer ||
-          !collection.items.length
-      ) {
-          return;
-      }
+    if (
+        !DOM.galleryViewer ||
+        !State.gallery.items.length
+    ) {
+        return;
+    }
 
-   if (
-       collection.broken.has(index)
-   ) {
-       return;
-   }
-   
-      const viewerTitle =
-       document.getElementById(
-           "gallery-viewer-title"
-       );
-   
-   if (viewerTitle) {
-       viewerTitle.textContent =
-           State.gallery.viewerSource ===
-           "celebration"
-               ? "Xem ảnh lễ kỷ niệm"
-               : "Xem ảnh triển lãm";
-   }
+
+    if (
+        State.gallery.broken.has(index)
+    ) {
+        return;
+    }
 
 
     State.gallery.triggerElement =
@@ -2439,12 +2350,9 @@ function initGalleryViewer() {
                 }
 
 
-                  const collection =
-                      getActiveViewerCollection();
-                  
-                  collection.broken.add(
-                      currentIndex
-                  );
+                State.gallery.broken.add(
+                    currentIndex
+                );
 
 
                 const nextIndex =

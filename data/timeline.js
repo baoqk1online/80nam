@@ -81,7 +81,18 @@ window.SiteData.timeline = [
             position: "50% 50%"
         },
 
-        images: []
+        images: [
+          {
+              image: "assets/timeline/1946-01.webp",
+              caption: "",
+              credit: ""
+          },
+          {
+              image: "assets/timeline/1946-02.webp",
+              caption: "",
+              credit: ""
+          }
+      ]
     },
 
 
@@ -189,7 +200,33 @@ window.SiteData.timeline = [
             position: "50% 50%"
         },
 
-        images: []
+        images: [
+         {
+              image: "assets/timeline/1957-01.webp",
+              caption: "",
+              credit: ""
+         },
+         {
+              image: "assets/timeline/1957-02.webp",
+              caption: "",
+              credit: ""
+         }
+         {
+              image: "assets/timeline/1957-03.webp",
+              caption: "",
+              credit: ""
+         }
+         {
+              image: "assets/timeline/1957-04.webp",
+              caption: "",
+              credit: ""
+         }
+         {
+              image: "assets/timeline/1957-05.webp",
+              caption: "",
+              credit: ""
+         }
+      ]
     },
 
 

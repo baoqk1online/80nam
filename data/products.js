@@ -30,7 +30,7 @@ window.SiteData.products = [
 
         title: "Phim truyền thống",
 
-        subtitle: "Hành trình 80 năm Báo Quân khu 1",
+        subtitle: "80 năm đồng hành cùng quân dân Việt Bắc",
 
         thumbnail: "assets/products/phim.webp",
 
